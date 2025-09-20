@@ -1,106 +1,97 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lilietpet - پت‌شاپ</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="title">پت شاپ شاد | خانه حیوانات خانگی شما</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans text-gray-800">
+<body>
 
-  <!-- هدر / Hero -->
-  <header class="bg-green-100">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between p-6">
-      <h1 class="text-3xl font-bold text-green-800">Lilietpet</h1>
-      <nav class="mt-4 md:mt-0">
-        <a href="#about" class="mx-2 text-green-700 hover:text-green-900">درباره ما</a>
-        <a href="#services" class="mx-2 text-green-700 hover:text-green-900">خدمات</a>
-        <a href="#products" class="mx-2 text-green-700 hover:text-green-900">محصولات</a>
-        <a href="#contact" class="mx-2 text-green-700 hover:text-green-900">تماس</a>
-      </nav>
-    </div>
-    <div class="text-center py-20 bg-green-200">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">به Lilietpet خوش آمدید</h2>
-      <p class="mb-6 text-lg md:text-xl">محصولات و خدمات ویژه برای حیوانات خانگی شما</p>
-      <a href="#products" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-900">مشاهده محصولات</a>
-    </div>
-  </header>
+    <header>
+        <nav class="navbar">
+            <div class="logo" data-lang="logo">🐾 پت شاپ شاد</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-lang="nav_home">خانه</a></li>
+                <li><a href="#services" data-lang="nav_services">خدمات</a></li>
+                <li><a href="#products" data-lang="nav_products">محصولات</a></li>
+                <li><a href="#contact" data-lang="nav_contact">تماس با ما</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button onclick="changeLanguage('fa')">🇮🇷 فارسی</button>
+                <button onclick="changeLanguage('en')">🇬🇧 English</button>
+                <button onclick="changeLanguage('tr')">🇹🇷 Türkçe</button>
+            </div>
+        </nav>
+    </header>
 
-  <!-- درباره ما -->
-  <section id="about" class="container mx-auto py-20 px-6">
-    <h3 class="text-3xl font-bold mb-6 text-center text-green-800">درباره ما</h3>
-    <p class="text-center max-w-2xl mx-auto mb-6">
-      پت‌شاپ Lilietpet با هدف ارائه بهترین محصولات و خدمات برای حیوانات خانگی شما ایجاد شده است. ما عاشق حیوانات هستیم و سلامت و رفاه آن‌ها اولویت ماست.
-    </p>
-    <div class="flex justify-center gap-6">
-      <img src="https://placekitten.com/300/200" alt="حیوان خانگی" class="rounded shadow-md">
-      <img src="https://placekitten.com/301/200" alt="محیط فروشگاه" class="rounded shadow-md">
-    </div>
-  </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 data-lang="hero_title">بهترین‌ها برای بهترین دوست شما</h1>
+                <p data-lang="hero_subtitle">محصولات با کیفیت، خدمات تخصصی و عشق بی‌پایان برای حیوانات خانگی شما.</p>
+                <a href="#products" class="cta-button" data-lang="hero_button">مشاهده محصولات</a>
+            </div>
+        </section>
 
-  <!-- خدمات -->
-  <section id="services" class="bg-green-50 py-20 px-6">
-    <h3 class="text-3xl font-bold mb-12 text-center text-green-800">خدمات ما</h3>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
-      <div class="p-6 bg-white rounded shadow hover:shadow-lg transition">
-        <h4 class="font-bold mb-2">فروش محصولات</h4>
-        <p>غذا، اسباب‌بازی و لوازم جانبی برای حیوانات خانگی شما</p>
-      </div>
-      <div class="p-6 bg-white rounded shadow hover:shadow-lg transition">
-        <h4 class="font-bold mb-2">مشاوره</h4>
-        <p>راهنمایی در مورد تغذیه، نگهداری و سلامت حیوانات خانگی</p>
-      </div>
-      <div class="p-6 bg-white rounded shadow hover:shadow-lg transition">
-        <h4 class="font-bold mb-2">خدمات آرایشی</h4>
-        <p>بهداشت و آرایش حیوانات خانگی برای ظاهر و سلامت بهتر</p>
-      </div>
-    </div>
-  </section>
+        <section id="services">
+            <h2 data-lang="services_title">خدمات ما</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="icon">🩺</div>
+                    <h3 data-lang="service1_title">کلینیک دامپزشکی</h3>
+                    <p data-lang="service1_desc">چکاپ‌های دوره‌ای، واکسیناسیون و مشاوره‌های تخصصی توسط بهترین دامپزشکان.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">✂️</div>
+                    <h3 data-lang="service2_title">آرایش و پیرایش</h3>
+                    <p data-lang="service2_desc">خدمات حرفه‌ای کوتاهی مو، شستشو و آرایش حیوانات خانگی با محصولات استاندارد.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🦴</div>
+                    <h3 data-lang="service3_title">مشاوره تغذیه</h3>
+                    <p data-lang="service3_desc">ارائه برنامه‌های غذایی متناسب با نژاد، سن و وضعیت سلامتی حیوان شما.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- محصولات -->
-  <section id="products" class="container mx-auto py-20 px-6">
-    <h3 class="text-3xl font-bold mb-12 text-center text-green-800">محصولات منتخب</h3>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div class="bg-white rounded shadow p-4">
-        <img src="https://placekitten.com/200/200" alt="محصول 1" class="rounded mb-4">
-        <h4 class="font-bold mb-2">غذای گربه</h4>
-        <p class="text-green-700 font-bold">120,000 تومان</p>
-      </div>
-      <div class="bg-white rounded shadow p-4">
-        <img src="https://placekitten.com/201/200" alt="محصول 2" class="rounded mb-4">
-        <h4 class="font-bold mb-2">اسباب‌بازی سگ</h4>
-        <p class="text-green-700 font-bold">80,000 تومان</p>
-      </div>
-      <div class="bg-white rounded shadow p-4">
-        <img src="https://placekitten.com/202/200" alt="محصول 3" class="rounded mb-4">
-        <h4 class="font-bold mb-2">لوازم جانبی</h4>
-        <p class="text-green-700 font-bold">50,000 تومان</p>
-      </div>
-    </div>
-  </section>
+        <section id="products">
+            <h2 data-lang="products_title">محصولات منتخب</h2>
+            <div class="products-grid">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x300.png?text=Dog+Food" alt="غذای سگ">
+                    <h3 data-lang="product1_name">غذای خشک سگ</h3>
+                    <p data-lang="product1_brand">برند: رویال کنین</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x300.png?text=Cat+Toy" alt="اسباب بازی گربه">
+                    <h3 data-lang="product2_name">اسباب بازی گربه</h3>
+                    <p data-lang="product2_brand">مخصوص گربه‌های پرانرژی</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x300.png?text=Bird+Cage" alt="قفس پرنده">
+                    <h3 data-lang="product3_name">قفس پرنده</h3>
+                    <p data-lang="product3_brand">طراحی مدرن و ایمن</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- تماس با ما -->
-  <section id="contact" class="bg-green-50 py-20 px-6">
-    <h3 class="text-3xl font-bold mb-6 text-center text-green-800">تماس با ما</h3>
-    <div class="max-w-2xl mx-auto">
-      <form class="bg-white p-6 rounded shadow space-y-4">
-        <input type="text" placeholder="نام شما" class="w-full p-3 border rounded">
-        <input type="email" placeholder="ایمیل شما" class="w-full p-3 border rounded">
-        <textarea placeholder="پیام شما" class="w-full p-3 border rounded"></textarea>
-        <button class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-900 w-full">ارسال پیام</button>
-      </form>
-      <div class="text-center mt-6 space-y-2">
-        <p>تلفن: 0912-XXX-XXXX</p>
-        <p>اینستاگرام: @Lilietpet</p>
-        <p>آدرس: تهران، ایران</p>
-      </div>
-    </div>
-  </section>
+        <section id="contact">
+            <h2 data-lang="contact_title">با ما در ارتباط باشید</h2>
+            <p data-lang="contact_desc">برای دریافت مشاوره رایگان یا پرسیدن سوالات خود، با ما تماس بگیرید.</p>
+            <div class="contact-info">
+                <p>📞 <span data-lang="contact_phone">تلفن:</span> 021-12345678</p>
+                <p>📧 <span data-lang="contact_email">ایمیل:</span> info@petshop.com</p>
+                <p>📍 <span data-lang="contact_address">آدرس:</span> تهران، خیابان شاد، پلاک ۱۰</p>
+            </div>
+        </section>
+    </main>
 
-  <!-- فوتر -->
-  <footer class="bg-green-100 text-center py-6">
-    <p>© 2025 Lilietpet</p>
-  </footer>
+    <footer>
+        <p data-lang="footer_text">© 2025 پت شاپ شاد. تمام حقوق محفوظ است.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
