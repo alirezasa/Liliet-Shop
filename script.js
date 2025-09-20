@@ -1,115 +1,103 @@
+// ==================== بخش چند زبانه ====================
+
 // آبجکت حاوی تمام ترجمه‌ها
 const translations = {
     en: {
-        title: "Happy Pet Shop | Your Pet's Home",
-        logo: "🐾 Happy Pet Shop",
+        title: "Lilietpet.com | Online Pet Products Store",
         nav_home: "Home",
-        nav_services: "Services",
         nav_products: "Products",
+        nav_catalog: "Catalog",
         nav_contact: "Contact",
-        hero_title: "The Best For Your Best Friend",
-        hero_subtitle: "Quality products, expert services, and endless love for your pets.",
-        hero_button: "View Products",
-        services_title: "Our Services",
-        service1_title: "Veterinary Clinic",
-        service1_desc: "Periodic check-ups, vaccinations, and expert consultations by top veterinarians.",
-        service2_title: "Grooming",
-        service2_desc: "Professional grooming, washing, and styling services with standard products.",
-        service3_title: "Nutrition Counseling",
-        service3_desc: "Providing diet plans tailored to your pet's breed, age, and health condition.",
-        products_title: "Featured Products",
-        product1_name: "Dry Dog Food",
+        hero_title: "Quality and Variety for Your Pet",
+        hero_subtitle: "Find the best products for your little friend at Lilietpet.com.",
+        hero_button: "View All Products",
+        catalog_title: "Smart Product Catalog",
+        catalog_desc: "View and download our latest product collection in a comprehensive PDF file.",
+        catalog_button: "📥 Download PDF Catalog",
+        products_title: "Product Catalog",
+        product1_name: "Adult Dry Dog Food",
         product1_brand: "Brand: Royal Canin",
-        product2_name: "Cat Toy",
+        product2_name: "Fish-shaped Cat Toy",
         product2_brand: "For energetic cats",
-        product3_name: "Bird Cage",
+        product3_name: "Large Bird Cage",
         product3_brand: "Modern and safe design",
+        product4_name: "Desktop Glass Aquarium",
+        product4_brand: "Includes full equipment",
         contact_title: "Get in Touch",
-        contact_desc: "Contact us for a free consultation or to ask your questions.",
+        contact_desc: "Contact us for wholesale orders or to get a consultation.",
         contact_phone: "Phone:",
         contact_email: "Email:",
         contact_address: "Address:",
-        footer_text: "© 2025 Happy Pet Shop. All rights reserved."
+        footer_text: "© 2025 Lilietpet.com. All rights reserved."
     },
     fa: {
-        title: "پت شاپ شاد | خانه حیوانات خانگی شما",
-        logo: "🐾 پت شاپ شاد",
+        title: "Lilietpet.com | فروشگاه آنلاین محصولات حیوانات خانگی",
         nav_home: "خانه",
-        nav_services: "خدمات",
         nav_products: "محصولات",
+        nav_catalog: "کاتالوگ",
         nav_contact: "تماس با ما",
-        hero_title: "بهترین‌ها برای بهترین دوست شما",
-        hero_subtitle: "محصولات با کیفیت، خدمات تخصصی و عشق بی‌پایان برای حیوانات خانگی شما.",
-        hero_button: "مشاهده محصولات",
-        services_title: "خدمات ما",
-        service1_title: "کلینیک دامپزشکی",
-        service1_desc: "چکاپ‌های دوره‌ای، واکسیناسیون و مشاوره‌های تخصصی توسط بهترین دامپزشکان.",
-        service2_title: "آرایش و پیرایش",
-        service2_desc: "خدمات حرفه‌ای کوتاهی مو، شستشو و آرایش حیوانات خانگی با محصولات استاندارد.",
-        service3_title: "مشاوره تغذیه",
-        service3_desc: "ارائه برنامه‌های غذایی متناسب با نژاد، سن و وضعیت سلامتی حیوان شما.",
-        products_title: "محصولات منتخب",
-        product1_name: "غذای خشک سگ",
+        hero_title: "کیفیت و تنوع برای حیوان خانگی شما",
+        hero_subtitle: "در Lilietpet.com بهترین محصولات را برای دوست کوچک خود پیدا کنید.",
+        hero_button: "مشاهده همه محصولات",
+        catalog_title: "کاتالوگ هوشمند محصولات",
+        catalog_desc: "آخرین مجموعه محصولات ما را در قالب یک فایل PDF جامع مشاهده و دانلود کنید.",
+        catalog_button: "📥 دانلود کاتالوگ PDF",
+        products_title: "کاتالوگ محصولات",
+        product1_name: "غذای خشک سگ بالغ",
         product1_brand: "برند: رویال کنین",
-        product2_name: "اسباب بازی گربه",
+        product2_name: "اسباب بازی گربه مدل ماهی",
         product2_brand: "مخصوص گربه‌های پرانرژی",
-        product3_name: "قفس پرنده",
+        product3_name: "قفس پرنده بزرگ",
         product3_brand: "طراحی مدرن و ایمن",
+        product4_name: "آکواریوم شیشه‌ای رومیزی",
+        product4_brand: "به همراه تجهیزات کامل",
         contact_title: "با ما در ارتباط باشید",
-        contact_desc: "برای دریافت مشاوره رایگان یا پرسیدن سوالات خود، با ما تماس بگیرید.",
+        contact_desc: "برای سفارشات عمده و یا دریافت مشاوره با ما تماس بگیرید.",
         contact_phone: "تلفن:",
         contact_email: "ایمیل:",
         contact_address: "آدرس:",
-        footer_text: "© 2025 پت شاپ شاد. تمام حقوق محفوظ است."
+        footer_text: "© 2025 Lilietpet.com. تمام حقوق محفوظ است."
     },
     tr: {
-        title: "Mutlu Pet Shop | Evcil Hayvanınızın Evi",
-        logo: "🐾 Mutlu Pet Shop",
+        title: "Lilietpet.com | Online Evcil Hayvan Ürünleri Mağazası",
         nav_home: "Anasayfa",
-        nav_services: "Hizmetler",
         nav_products: "Ürünler",
+        nav_catalog: "Katalog",
         nav_contact: "İletişim",
-        hero_title: "En İyi Dostunuz İçin En İyisi",
-        hero_subtitle: "Kaliteli ürünler, uzman hizmetler ve evcil hayvanlarınız için sonsuz sevgi.",
-        hero_button: "Ürünleri Görüntüle",
-        services_title: "Hizmetlerimiz",
-        service1_title: "Veteriner Kliniği",
-        service1_desc: "En iyi veterinerler tarafından periyodik kontroller, aşılamalar ve uzman danışmanlık.",
-        service2_title: "Tüy Bakımı",
-        service2_desc: "Standart ürünlerle profesyonel tüy kesimi, yıkama ve stil hizmetleri.",
-        service3_title: "Beslenme Danışmanlığı",
-        service3_desc: "Evcil hayvanınızın cinsine, yaşına ve sağlık durumuna uygun diyet planları sunma.",
-        products_title: "Öne Çıkan Ürünler",
-        product1_name: "Kuru Köpek Maması",
+        hero_title: "Evcil Hayvanınız İçin Kalite ve Çeşitlilik",
+        hero_subtitle: "Küçük dostunuz için en iyi ürünleri Lilietpet.com'da bulun.",
+        hero_button: "Tüm Ürünleri Görüntüle",
+        catalog_title: "Akıllı Ürün Kataloğu",
+        catalog_desc: "En son ürün koleksiyonumuzu kapsamlı bir PDF dosyasında görüntüleyin ve indirin.",
+        catalog_button: "📥 PDF Kataloğu İndir",
+        products_title: "Ürün Kataloğu",
+        product1_name: "Yetişkin Kuru Köpek Maması",
         product1_brand: "Marka: Royal Canin",
-        product2_name: "Kedi Oyuncağı",
+        product2_name: "Balık Şeklinde Kedi Oyuncağı",
         product2_brand: "Enerjik kediler için",
-        product3_name: "Kuş Kafesi",
+        product3_name: "Büyük Kuş Kafesi",
         product3_brand: "Modern ve güvenli tasarım",
+        product4_name: "Masaüstü Cam Akvaryum",
+        product4_brand: "Tüm ekipmanlar dahil",
         contact_title: "İletişime Geçin",
-        contact_desc: "Ücretsiz danışmanlık veya sorularınız için bizimle iletişime geçin.",
+        contact_desc: "Toptan siparişler veya danışmanlık için bizimle iletişime geçin.",
         contact_phone: "Telefon:",
         contact_email: "E-posta:",
         contact_address: "Adres:",
-        footer_text: "© 2025 Mutlu Pet Shop. Tüm hakları saklıdır."
+        footer_text: "© 2025 Lilietpet.com. Tüm hakları saklıdır."
     }
 };
 
 // تابع برای تغییر زبان
 function changeLanguage(lang) {
-    // تغییر جهت و زبان صفحه برای فارسی
     if (lang === 'fa') {
-        document.documentElement.setAttribute('lang', 'fa');
         document.documentElement.setAttribute('dir', 'rtl');
     } else {
-        document.documentElement.setAttribute('lang', lang);
         document.documentElement.setAttribute('dir', 'ltr');
     }
+    document.documentElement.setAttribute('lang', lang);
 
-    // انتخاب تمام المنت‌هایی که نیاز به ترجمه دارند
     const elements = document.querySelectorAll('[data-lang]');
-    
-    // جایگزینی متن‌ها با ترجمه مناسب
     elements.forEach(element => {
         const key = element.getAttribute('data-lang');
         if (translations[lang][key]) {
@@ -118,7 +106,24 @@ function changeLanguage(lang) {
     });
 }
 
-// تنظیم زبان پیش‌فرض هنگام بارگذاری صفحه
+// ==================== بخش منوی موبایل ====================
+
 document.addEventListener('DOMContentLoaded', () => {
-    changeLanguage('fa'); // زبان پیش‌فرض فارسی
+    // تنظیم زبان پیش‌فرض
+    changeLanguage('fa'); 
+
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    // باز و بسته کردن منو با کلیک روی آیکون
+    mobileMenuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // بستن منو با کلیک روی هر یک از لینک‌ها
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 });

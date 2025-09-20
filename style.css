@@ -2,11 +2,11 @@
 :root {
     --primary-color: #56CCF2; /* آبی فیروزه‌ای */
     --accent-color: #F2994A;  /* نارنجی روشن */
-    --neutral-bg: #F2F2F2;    /* خاکستری خیلی روشن */
-    --warm-neutral: #E0C097;  /* بژ گرم */
+    --neutral-bg: #F8F9FA;    /* خاکستری خیلی روشن */
     --text-color: #333;
     --light-text: #fff;
     --font-family: 'Vazirmatn', 'Helvetica', sans-serif;
+    --border-radius: 12px;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     padding: 0;
     background-color: var(--neutral-bg);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
     scroll-behavior: smooth;
 }
 
@@ -24,24 +24,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+.logo-img {
+    height: 50px; /* ارتفاع لوگو را تنظیم کنید */
+    width: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     margin: 0;
     padding: 0;
 }
@@ -49,7 +48,8 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -59,11 +59,10 @@ body {
 
 .language-switcher button {
     margin-left: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ddd;
     background-color: transparent;
-    color: var(--primary-color);
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -71,22 +70,26 @@ body {
 .language-switcher button:hover {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
+}
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 /* ======== بخش معرفی (Hero) ======== */
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1548681528-6a5c45b66b42?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600'); /* تصویر گربه بامزه */
+    background-image: url('https://images.unsplash.com/photo-1553881651-4fb18b94a262?q=80&w=2071&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 6rem 2rem;
     text-align: center;
     color: white;
     position: relative;
 }
-/* یک لایه تیره روی عکس برای خوانایی بهتر متن */
+
 .hero::before {
     content: '';
     position: absolute;
@@ -94,7 +97,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
 }
 
 .hero-content {
@@ -103,29 +106,34 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* فونت واکنش‌گرا */
     margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-button {
     background-color: var(--accent-color);
     color: white;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2.5rem;
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    border: none;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    background-color: #e6893a;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(242, 153, 74, 0.4);
 }
 
 /* ======== بخش‌های عمومی ======== */
@@ -136,54 +144,47 @@ section {
 
 section h2 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
-/* ======== بخش خدمات ======== */
-.services-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+section p {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: #555;
 }
 
-.service-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-.service-card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-/* ======== بخش محصولات ======== */
-#products {
+/* ======== بخش کاتالوگ ======== */
+#catalog {
     background-color: #fff;
 }
 
+.download-btn {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+
+/* ======== بخش محصولات ======== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-item {
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: var(--border-radius);
     overflow: hidden;
     text-align: center;
-    background-color: var(--neutral-bg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .product-item img {
@@ -193,18 +194,26 @@ section h2 {
 }
 
 .product-item h3 {
-    margin: 1rem 0 0.5rem;
+    margin: 1.5rem 0 0.5rem;
+    color: #333;
 }
+
 .product-item p {
-    color: #666;
-    margin-bottom: 1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
-
-/* ======== بخش تماس با ما ======== */
-.contact-info p {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
+/* ======== بخش تماس ======== */
+#contact {
+    background-color: var(--primary-color);
+    color: white;
+}
+#contact h2 {
+    color: white;
+}
+#contact p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ======== فوتر ======== */
@@ -215,19 +224,30 @@ footer {
     padding: 1.5rem;
 }
 
-/* ======== طراحی واکنش‌گرا (Responsive) ======== */
+/* ======== طراحی واکنش‌گرا (موبایل) ======== */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* در موبایل منو را مخفی می‌کنیم */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 70px; /* ارتفاع هدر */
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .mobile-menu-icon {
+        display: block;
     }
     .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero p {
-        font-size: 1rem;
+        padding: 0.8rem 1rem;
     }
 }

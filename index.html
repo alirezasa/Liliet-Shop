@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="title">پت شاپ شاد | خانه حیوانات خانگی شما</title>
+    <title data-lang="title">Lilietpet.com | فروشگاه آنلاین محصولات حیوانات خانگی</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -11,85 +11,81 @@
 
     <header>
         <nav class="navbar">
-            <div class="logo" data-lang="logo">🐾 پت شاپ شاد</div>
+            <a href="#home" class="logo-link"><img src="logo.png" alt="Lilietpet.com Logo" class="logo-img"></a>
+            
             <ul class="nav-links">
                 <li><a href="#home" data-lang="nav_home">خانه</a></li>
-                <li><a href="#services" data-lang="nav_services">خدمات</a></li>
                 <li><a href="#products" data-lang="nav_products">محصولات</a></li>
+                <li><a href="#catalog" data-lang="nav_catalog">کاتالوگ</a></li>
                 <li><a href="#contact" data-lang="nav_contact">تماس با ما</a></li>
             </ul>
+
             <div class="language-switcher">
-                <button onclick="changeLanguage('fa')">🇮🇷 فارسی</button>
-                <button onclick="changeLanguage('en')">🇬🇧 English</button>
-                <button onclick="changeLanguage('tr')">🇹🇷 Türkçe</button>
+                <button onclick="changeLanguage('fa')">🇮🇷</button>
+                <button onclick="changeLanguage('en')">🇬🇧</button>
+                <button onclick="changeLanguage('tr')">🇹🇷</button>
             </div>
+            
+            <div class="mobile-menu-icon">☰</div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 data-lang="hero_title">بهترین‌ها برای بهترین دوست شما</h1>
-                <p data-lang="hero_subtitle">محصولات با کیفیت، خدمات تخصصی و عشق بی‌پایان برای حیوانات خانگی شما.</p>
-                <a href="#products" class="cta-button" data-lang="hero_button">مشاهده محصولات</a>
+                <h1 data-lang="hero_title">کیفیت و تنوع برای حیوان خانگی شما</h1>
+                <p data-lang="hero_subtitle">در Lilietpet.com بهترین محصولات را برای دوست کوچک خود پیدا کنید.</p>
+                <a href="#products" class="cta-button" data-lang="hero_button">مشاهده همه محصولات</a>
             </div>
         </section>
-
-        <section id="services">
-            <h2 data-lang="services_title">خدمات ما</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <div class="icon">🩺</div>
-                    <h3 data-lang="service1_title">کلینیک دامپزشکی</h3>
-                    <p data-lang="service1_desc">چکاپ‌های دوره‌ای، واکسیناسیون و مشاوره‌های تخصصی توسط بهترین دامپزشکان.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">✂️</div>
-                    <h3 data-lang="service2_title">آرایش و پیرایش</h3>
-                    <p data-lang="service2_desc">خدمات حرفه‌ای کوتاهی مو، شستشو و آرایش حیوانات خانگی با محصولات استاندارد.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🦴</div>
-                    <h3 data-lang="service3_title">مشاوره تغذیه</h3>
-                    <p data-lang="service3_desc">ارائه برنامه‌های غذایی متناسب با نژاد، سن و وضعیت سلامتی حیوان شما.</p>
-                </div>
-            </div>
+        
+        <section id="catalog">
+            <h2 data-lang="catalog_title">کاتالوگ هوشمند محصولات</h2>
+            <p data-lang="catalog_desc">آخرین مجموعه محصولات ما را در قالب یک فایل PDF جامع مشاهده و دانلود کنید.</p>
+            <a href="Lilietpet-Catalog.pdf" download class="cta-button download-btn" data-lang="catalog_button">
+                📥 دانلود کاتالوگ PDF
+            </a>
         </section>
 
         <section id="products">
-            <h2 data-lang="products_title">محصولات منتخب</h2>
+            <h2 data-lang="products_title">کاتالوگ محصولات</h2>
             <div class="products-grid">
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300.png?text=Dog+Food" alt="غذای سگ">
-                    <h3 data-lang="product1_name">غذای خشک سگ</h3>
+                    <img src="https://via.placeholder.com/350x350.png?text=Royal+Canin" alt="غذای سگ">
+                    <h3 data-lang="product1_name">غذای خشک سگ بالغ</h3>
                     <p data-lang="product1_brand">برند: رویال کنین</p>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300.png?text=Cat+Toy" alt="اسباب بازی گربه">
-                    <h3 data-lang="product2_name">اسباب بازی گربه</h3>
+                    <img src="https://via.placeholder.com/350x350.png?text=Cat+Toy" alt="اسباب بازی گربه">
+                    <h3 data-lang="product2_name">اسباب بازی گربه مدل ماهی</h3>
                     <p data-lang="product2_brand">مخصوص گربه‌های پرانرژی</p>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300.png?text=Bird+Cage" alt="قفس پرنده">
-                    <h3 data-lang="product3_name">قفس پرنده</h3>
+                    <img src="https://via.placeholder.com/350x350.png?text=Bird+Cage" alt="قفس پرنده">
+                    <h3 data-lang="product3_name">قفس پرنده بزرگ</h3>
                     <p data-lang="product3_brand">طراحی مدرن و ایمن</p>
+                </div>
+                 <div class="product-item">
+                    <img src="https://via.placeholder.com/350x350.png?text=Aquarium" alt="آکواریوم">
+                    <h3 data-lang="product4_name">آکواریوم شیشه‌ای رومیزی</h3>
+                    <p data-lang="product4_brand">به همراه تجهیزات کامل</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2 data-lang="contact_title">با ما در ارتباط باشید</h2>
-            <p data-lang="contact_desc">برای دریافت مشاوره رایگان یا پرسیدن سوالات خود، با ما تماس بگیرید.</p>
+            <p data-lang="contact_desc">برای سفارشات عمده و یا دریافت مشاوره با ما تماس بگیرید.</p>
             <div class="contact-info">
                 <p>📞 <span data-lang="contact_phone">تلفن:</span> 021-12345678</p>
-                <p>📧 <span data-lang="contact_email">ایمیل:</span> info@petshop.com</p>
-                <p>📍 <span data-lang="contact_address">آدرس:</span> تهران، خیابان شاد، پلاک ۱۰</p>
+                <p>📧 <span data-lang="contact_email">ایمیل:</span> sales@lilietpet.com</p>
+                <p>📍 <span data-lang="contact_address">آدرس:</span> تهران، مرکز پخش آنلاین Lilietpet</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p data-lang="footer_text">© 2025 پت شاپ شاد. تمام حقوق محفوظ است.</p>
+        <p data-lang="footer_text">© 2025 Lilietpet.com. تمام حقوق محفوظ است.</p>
     </footer>
 
     <script src="script.js"></script>
