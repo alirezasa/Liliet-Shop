@@ -1,328 +1,325 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liliet Pet Shop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لیلیت پت | تولید و پخش ملزومات حیوانات خانگی</title>
+<meta name="description" content="گروه تولیدی و پخش لیلیت پت؛ تولیدکننده کوله حمل فضایی، ترولی، جای خواب، قلاده، اسکرچر و کاور ماشین برای سگ، گربه و پرنده با کیفیت بسیار بالا.">
+<meta name="theme-color" content="#A8D3BF">
+<link rel="canonical" href="https://lilietpet.com/">
+<link rel="alternate" hreflang="fa" href="https://lilietpet.com/?lang=fa">
+<link rel="alternate" hreflang="en" href="https://lilietpet.com/?lang=en">
+<link rel="alternate" hreflang="tr" href="https://lilietpet.com/?lang=tr">
+<link rel="alternate" hreflang="x-default" href="https://lilietpet.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Liliet Pet">
+<meta property="og:title" content="لیلیت پت | تولید و پخش ملزومات حیوانات خانگی">
+<meta property="og:description" content="کوله حمل فضایی، ترولی، جای خواب، قلاده، اسکرچر و کاور ماشین برای سگ، گربه و پرنده.">
+<meta property="og:url" content="https://lilietpet.com/">
+<meta property="og:image" content="https://lilietpet.com/assets/img/brand/og-image.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/brand/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-/* ===== استایل های قبلی شما ===== */
-:root {
-    --base-green: #A8E6CF;
-    --base-blue: #89CFF0;
-    --accent-orange: #FFD3B6;
-    --accent-gold: #FFAA71;
-    --neutral-white: #FFFFFF;
-    --neutral-light-gray: #f9f9f9;
-    --neutral-beige: #F5F5DC;
-    --text-dark: #3E4C59;
-    --text-light: #6c757d;
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Liliet Pet",
+  "alternateName": "لیلیت پت",
+  "url": "https://lilietpet.com/",
+  "logo": "https://lilietpet.com/assets/img/brand/logo.png",
+  "email": "sales@lilietpet.com",
+  "telephone": "+989364559096",
+  "sameAs": ["https://www.instagram.com/lilietpet/"]
 }
-* {margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-    font-family:'Poppins','Vazirmatn',sans-serif;
-    line-height:1.7;color:var(--text-dark);
-    background-color:var(--neutral-light-gray);
-    transition:all 0.3s ease;
-}
-.container{max-width:1200px;margin:auto;padding:0 20px;}
-h1,h2,h3{font-weight:600;margin-bottom:20px;}
-section{padding:80px 0;}
-.btn{
-    display:inline-block;
-    background:var(--accent-gold);
-    color:var(--neutral-white);
-    padding:12px 35px;
-    text-decoration:none;
-    border-radius:50px;
-    font-size:1rem;
-    font-weight:600;
-    border:none;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    box-shadow:0 4px 15px rgba(255,170,113,0.4);
-}
-.btn:hover{
-    background:#ff9a58;
-    transform:translateY(-3px);
-    box-shadow:0 6px 20px rgba(255,170,113,0.6);
-}
-#main-header{
-    background:var(--neutral-white);
-    box-shadow:0 2px 15px rgba(0,0,0,0.08);
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-}
-#navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 0;
-}
-#navbar .logo{
-    font-size:1.8rem;
-    font-weight:700;
-    color:var(--base-green);
-    text-decoration:none;
-}
-#navbar .logo span{color:var(--accent-gold);}
-#navbar ul{display:flex;list-style:none;align-items:center;}
-#navbar ul li a{
-    color:var(--text-dark);
-    padding:0.75rem;
-    margin:0 0.5rem;
-    text-decoration:none;
-    font-weight:600;
-    transition:color 0.3s ease;
-}
-#navbar ul li a:hover{color:var(--accent-gold);}
-.language-switcher{
-    display:flex;gap:10px;margin-left:20px;
-}
-.language-switcher button{
-    background:none;
-    border:2px solid var(--neutral-light-gray);
-    color:var(--text-light);
-    cursor:pointer;
-    font-size:0.9rem;
-    font-weight:600;
-    padding:5px 12px;
-    border-radius:20px;
-    transition:all 0.3s ease;
-}
-.language-switcher button:hover{
-    border-color:var(--accent-gold);
-    color:var(--accent-gold);
-}
-.language-switcher button.active{
-    background-color:var(--accent-gold);
-    border-color:var(--accent-gold);
-    color:var(--neutral-white);
-}
-#hero{
-    background:linear-gradient(to right,#a8e6cf,#d2f2ea);
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:var(--text-dark);
-    padding-top:80px;
-}
-#hero h1{font-size:clamp(2.5rem,5vw,4rem);}
-#hero p{
-    font-size:clamp(1.1rem,2.5vw,1.4rem);
-    margin-bottom:30px;
-    max-width:700px;
-    margin-left:auto;margin-right:auto;
-}
-#products{background:var(--neutral-white);}
-.section-title{text-align:center;margin-bottom:50px;font-size:2.8rem;}
-.products-tabs{display:flex;flex-wrap:wrap;justify-content:center;margin-bottom:30px;}
-.tab-button{
-    background:var(--neutral-light-gray);
-    border:none;
-    padding:10px 20px;
-    margin:5px;
-    cursor:pointer;
-    font-weight:600;
-    border-radius:50px;
-    transition:all 0.3s ease;
-}
-.tab-button.active{background:var(--accent-gold);color:#fff;}
-.tab-content{display:none;}
-.tab-content.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.product-card{
-    background:var(--neutral-white);
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,0.07);
-    display:flex;
-    flex-direction:column;
-}
-.product-card-image{height:220px;overflow:hidden;}
-.product-card-image img{width:100%;height:100%;object-fit:cover;}
-.product-card-content{padding:15px;text-align:center;}
-.product-card h3{margin-bottom:10px;font-size:1.2rem;color:var(--text-dark);}
-.product-card p{font-size:1rem;color:var(--text-light);}
-.catalog-download{text-align:center;margin-top:60px;background:var(--base-blue);padding:40px 20px;border-radius:15px;}
-.catalog-download h3{font-size:1.8rem;margin-bottom:15px;color:var(--neutral-white);}
-#about p{text-align:center;max-width:800px;margin:auto;font-size:1.1rem;}
-#contact{background:var(--neutral-beige);}
-.contact-info{text-align:center;font-size:1.2rem;font-weight:600;}
-.contact-info p{margin:10px 0;}
-.contact-info a{color:var(--text-dark);text-decoration:none;transition:color 0.3s ease;}
-.contact-info a:hover{color:var(--accent-gold);}
-#main-footer{background:var(--text-dark);color:var(--neutral-white);text-align:center;padding:2rem 0;}
-html[dir="rtl"]{font-family:'Vazirmatn','Poppins',sans-serif;}
-html[dir="rtl"] #navbar ul{flex-direction:row-reverse;}
-html[dir="rtl"] #navbar{flex-direction:row-reverse;}
-html[dir="rtl"] .language-switcher{margin-left:0;margin-right:20px;}
-@media(max-width:768px){
-    #navbar{flex-direction:column;padding:1rem;}
-    #navbar .logo{margin-bottom:15px;}
-    #navbar ul{flex-direction:column;width:100%;padding-top:10px;}
-    #navbar ul li{padding:8px 0;}
-    .language-switcher{margin:15px 0 0 0;}
-    #hero{padding-top:220px;}
-    .section-title{font-size:2.2rem;}
-    html[dir="rtl"] #navbar,#navbar ul{flex-direction:column;}
-}
-</style>
+</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-paw" viewBox="0 0 24 24"><path fill="currentColor" d="M12 13.2c-3.1 0-6.3 3.4-6.3 5.9 0 1.6 1.3 2.4 3 2.4 1.4 0 2.2-.7 3.3-.7s1.9.7 3.3.7c1.7 0 3-.8 3-2.4 0-2.5-3.2-5.9-6.3-5.9zM6.2 12.4c1.3-.3 1.9-2 1.5-3.7S5.9 5.9 4.6 6.2 2.7 8.2 3.1 9.9s1.8 2.8 3.1 2.5zm11.6 0c1.3.3 2.7-.8 3.1-2.5s-.2-3.4-1.5-3.7-2.7.8-3.1 2.5.2 3.4 1.5 3.7zM9.4 8.6c1.5 0 2.5-1.6 2.5-3.5S10.9 1.6 9.4 1.6 6.9 3.2 6.9 5.1s1 3.5 2.5 3.5zm5.2 0c1.5 0 2.5-1.6 2.5-3.5s-1-3.5-2.5-3.5-2.5 1.6-2.5 3.5 1 3.5 2.5 3.5z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7 1.8 2.8 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2c-.1-.1-.3-.2-.6-.3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8.3c0-1.6-.4-3-1.6-4.1s-2.5-1.5-4.1-1.6c-1.6-.1-6.5-.1-8.1 0-1.6.1-3 .4-4.1 1.6S2.6 6.7 2.5 8.3c-.1 1.6-.1 6.5 0 8.1.1 1.6.4 3 1.6 4.1s2.5 1.5 4.1 1.6c1.6.1 6.5.1 8.1 0 1.6-.1 3-.4 4.1-1.6s1.5-2.5 1.6-4.1c.1-1.6.1-6.5 0-8.1zm-2.1 9.9a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.8.4s-4.6.1-5.8-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.6.4-5.8a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.8-.4s4.6-.1 5.8.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.8s.1 4.6-.4 5.8z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.4 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4zm.8 2h2.9c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.4 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.4-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="currentColor" d="M5 20h14v-2H5zm14-11h-4V3H9v6H5l7 7z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4 10.6 5.4 16.2 11H4v2h12.2l-5.6 5.6L12 20l8-8z"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path fill="currentColor" d="M4 12l1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12l-8-8z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path fill="currentColor" d="M22 22H2V10l7-3v2l5-2v3h3l1-8h3l1 8zM6 18h2v-2H6zm5 0h2v-2h-2zm5 0h2v-2h-2z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.3 18.2 21l-1.6-7L22 9.2l-7.2-.6L12 2 9.2 8.6 2 9.2 7.5 14l-1.7 7z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 0 0 0 18c.8 0 1.5-.7 1.5-1.5 0-.4-.1-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8zm-5.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.4-1.5-1.3C5.4 15.4 2 12.3 2 8.5 2 5.4 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1A6 6 0 0 1 16.5 3C19.6 3 22 5.4 22 8.5c0 3.8-3.4 6.9-8.5 11.5z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path fill="currentColor" d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7A3.1 3.1 0 0 1 3.9 12zM8 13h8v-2H8zm9-6h-4v1.9h4a3.1 3.1 0 0 1 0 6.2h-4V17h4a5 5 0 0 0 0-10z"/></symbol>
+</svg>
 
-<header id="main-header">
-    <div class="container">
-        <nav id="navbar">
-            <a href="#hero" class="logo">liliet<span>pet</span></a>
-            <ul>
-                <li><a href="#products" data-translate="nav_products">Products</a></li>
-                <li><a href="#about" data-translate="nav_about">About Us</a></li>
-                <li><a href="#contact" data-translate="nav_contact">Contact Us</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button id="lang-en" class="active">EN</button>
-                <button id="lang-tr">TR</button>
-                <button id="lang-fa">FA</button>
-            </div>
-        </nav>
+<a class="skip-link" href="#main" data-i18n="skip">رفتن به محتوا</a>
+
+<div class="topbar">
+  <div class="container topbar__inner">
+    <p class="topbar__text"><svg class="ico"><use href="#i-paw"/></svg> <span data-i18n="topbar_text">گروه تولیدی و پخش لیلیت پت</span></p>
+    <div class="topbar__links">
+      <a href="tel:+989364559096" dir="ltr"><svg class="ico"><use href="#i-phone"/></svg> +98 936 455 9096</a>
+      <a href="mailto:sales@lilietpet.com"><svg class="ico"><use href="#i-mail"/></svg> sales@lilietpet.com</a>
+      <a href="https://www.instagram.com/lilietpet/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg> lilietpet</a>
     </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="brand" aria-label="Liliet Pet">
+      <img src="assets/img/brand/logo.png" alt="Liliet Pet" width="560" height="348">
+    </a>
+    <nav class="nav" id="nav" aria-label="main">
+      <div class="nav__head">
+        <img src="assets/img/brand/logo.png" alt="" width="560" height="348">
+        <button class="icon-btn" id="navClose" data-i18n-aria="close" aria-label="بستن"><svg><use href="#i-close"/></svg></button>
+      </div>
+      <a href="#home" class="nav__link" data-i18n="nav_home">خانه</a>
+      <a href="#categories" class="nav__link" data-i18n="nav_categories">دسته‌بندی‌ها</a>
+      <a href="#products" class="nav__link" data-i18n="nav_products">محصولات</a>
+      <a href="#about" class="nav__link" data-i18n="nav_about">درباره ما</a>
+      <a href="#catalog" class="nav__link" data-i18n="nav_catalog">کاتالوگ</a>
+      <a href="#contact" class="nav__link" data-i18n="nav_contact">تماس با ما</a>
+    </nav>
+    <div class="header__actions">
+      <div class="lang" role="group" data-i18n-aria="lang_label" aria-label="زبان">
+        <button type="button" data-lang="fa" class="active" lang="fa">فا</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+        <button type="button" data-lang="tr" lang="tr">TR</button>
+      </div>
+      <button class="icon-btn menu-btn" id="navOpen" data-i18n-aria="menu" aria-label="منو" aria-controls="nav" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
 </header>
+<div class="nav-backdrop" id="navBackdrop"></div>
 
-<section id="hero">
-    <div class="container">
-        <h1 data-translate="hero_title">Welcome to Liliet Pet Shop</h1>
-        <p data-translate="hero_subtitle">Everything your beloved pet needs for a happy and healthy life.</p>
-        <a href="#products" class="btn" data-translate="hero_button">View Products</a>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__paws" aria-hidden="true">
+      <svg class="p1"><use href="#i-paw"/></svg><svg class="p2"><use href="#i-paw"/></svg><svg class="p3"><use href="#i-paw"/></svg><svg class="p4"><use href="#i-paw"/></svg>
     </div>
-</section>
-
-<main>
-<section id="products">
-    <div class="container">
-        <h2 class="section-title" data-translate="products_title">Our Featured Products</h2>
-
-        <!-- تب‌ها -->
-        <div class="products-tabs">
-            <button class="tab-button active" data-tab="tab_kole">Backpacks</button>
-            <button class="tab-button" data-tab="tab_scratcher">Scratchers</button>
-            <button class="tab-button" data-tab="tab_hug">Harnesses</button>
-            <button class="tab-button" data-tab="tab_bed">Pet Beds</button>
-            <button class="tab-button" data-tab="tab_bag">Shoulder Bags</button>
-            <button class="tab-button" data-tab="tab_elizabeth">Elizabeth</button>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge"><svg class="ico"><use href="#i-paw"/></svg> <span data-i18n="hero_badge">تولیدکننده ملزومات حیوانات خانگی</span></span>
+        <h1 data-i18n-html="hero_title">هر آنچه پت شما برای <span>سفر، خواب و بازی</span> نیاز دارد</h1>
+        <p class="hero__text" data-i18n="hero_text">لیلیت پت، تولیدکننده انواع ملزومات حیوانات خانگی با کیفیت بسیار بالا.</p>
+        <div class="hero__cta">
+          <a href="#products" class="btn btn--primary"><span data-i18n="hero_cta">مشاهده محصولات</span> <svg class="ico flip"><use href="#i-arrow"/></svg></a>
+          <a href="Liliet05.pdf" class="btn btn--ghost" download><svg class="ico"><use href="#i-down"/></svg> <span data-i18n="hero_cta2">دانلود کاتالوگ</span></a>
         </div>
-
-        <!-- محتوا -->
-        <div id="tab_kole" class="tab-content active">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/koole/2.png"></div><div class="product-card-content"><h3>Backpack 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/koole/3.png"></div><div class="product-card-content"><h3>Backpack 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/koole/4.png"></div><div class="product-card-content"><h3>Backpack 3</h3></div></div>
-        </div>
-
-        <div id="tab_scratcher" class="tab-content">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Skara/1.png"></div><div class="product-card-content"><h3>Scratcher 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Skara/2.png"></div><div class="product-card-content"><h3>Scratcher 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Skara/3.png"></div><div class="product-card-content"><h3>Scratcher 3</h3></div></div>
-        </div>
-
-        <div id="tab_hug" class="tab-content">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Harnesses/1.png"></div><div class="product-card-content"><h3>Harness 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Harnesses/2.png"></div><div class="product-card-content"><h3>Harness 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Harnesses/3.png"></div><div class="product-card-content"><h3>Harness 3</h3></div></div>
-        </div>
-
-        <div id="tab_bed" class="tab-content">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/bed/1.png"></div><div class="product-card-content"><h3>Pet Bed 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/bed/2.png"></div><div class="product-card-content"><h3>Pet Bed 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/bed/3.png"></div><div class="product-card-content"><h3>Pet Bed 3</h3></div></div>
-        </div>
-
-        <div id="tab_bag" class="tab-content">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/shulder/1.png"></div><div class="product-card-content"><h3>Bag 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/shulder/2.png"></div><div class="product-card-content"><h3>Bag 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="https://placehold.co/600x400/A0D8EF/FFFFFF?text=Bag+3"></div><div class="product-card-content"><h3>Bag 3</h3></div></div>
-        </div>
-
-        <div id="tab_elizabeth" class="tab-content">
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Elizabeth/1.png"></div><div class="product-card-content"><h3>Elizabeth 1</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Elizabeth/2.png"></div><div class="product-card-content"><h3>Elizabeth 2</h3></div></div>
-            <div class="product-card"><div class="product-card-image"><img src="../pic/Elizabeth/3.png"></div><div class="product-card-content"><h3>Elizabeth 3</h3></div></div>
-        </div>
-
-        <div class="catalog-download">
-            <h3 data-translate="catalog_title">Check Out Our Full Catalog!</h3>
-            <a href="CA.pdf" download class="btn" data-translate="catalog_button">Download PDF Catalog</a>
-        </div>
+        <dl class="stats">
+          <div><dt id="statProducts">22</dt><dd data-i18n="stat_products">محصول</dd></div>
+          <div><dt id="statVariants">190+</dt><dd data-i18n="stat_variants">رنگ و طرح</dd></div>
+          <div><dt id="statCats">6</dt><dd data-i18n="stat_categories">دسته‌بندی</dd></div>
+        </dl>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__blob"></div>
+        <img src="assets/img/brand/hero.webp" alt="Liliet Pet" class="hero__img" width="1000" height="1110" fetchpriority="high">
+        <div class="float-card float-card--a"><svg class="ico"><use href="#i-star"/></svg><span data-i18n="hero_float1">کیفیت بسیار بالا</span></div>
+        <div class="float-card float-card--b"><svg class="ico"><use href="#i-palette"/></svg><span data-i18n="hero_float2">تنوع رنگ و طرح</span></div>
+      </div>
     </div>
-</section>
+    <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c240 40 480 40 720 20S1200-10 1440 30v50H0z"/></svg>
+  </section>
 
-<section id="about">
-    <div class="container">
-        <h2 class="section-title" data-translate="about_title">About Liliet Pet</h2>
-        <p data-translate="about_text">Liliet Pet was founded with a simple mission...</p>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container features__grid">
+      <div class="feature reveal"><span class="feature__icon"><svg><use href="#i-factory"/></svg></span><div><h3 data-i18n="feat1_t">تولید و پخش مستقیم</h3><p data-i18n="feat1_d"></p></div></div>
+      <div class="feature reveal"><span class="feature__icon"><svg><use href="#i-star"/></svg></span><div><h3 data-i18n="feat2_t">کیفیت بسیار بالا</h3><p data-i18n="feat2_d"></p></div></div>
+      <div class="feature reveal"><span class="feature__icon"><svg><use href="#i-palette"/></svg></span><div><h3 data-i18n="feat3_t">تنوع رنگ و طرح</h3><p data-i18n="feat3_d"></p></div></div>
+      <div class="feature reveal"><span class="feature__icon"><svg><use href="#i-paw"/></svg></span><div><h3 data-i18n="feat4_t">سگ، گربه و پرنده</h3><p data-i18n="feat4_d"></p></div></div>
     </div>
-</section>
+  </section>
 
-<section id="contact">
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
     <div class="container">
-        <h2 class="section-title" data-translate="contact_title">Get In Touch</h2>
-        <div class="contact-info">
-            <p><strong data-translate="contact_email">Email:</strong> <a href="mailto:seles@lilietpet.com">seles@lilietpet.com</a></p>
-            <p><strong data-translate="contact_phone">Phone (Iran):</strong> <a href="tel:+989364559096">+98 936 455 9096</a></p>
+      <header class="section__head reveal">
+        <span class="eyebrow" data-i18n="cats_eyebrow">دسته‌بندی‌ها</span>
+        <h2 data-i18n="cats_title">محصولات ما را بر اساس نیاز پیدا کنید</h2>
+        <p data-i18n="cats_text"></p>
+      </header>
+      <div class="cats" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section section--tint" id="products">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow" data-i18n="prod_eyebrow">فروشگاه</span>
+        <h2 data-i18n="prod_title">محصولات لیلیت پت</h2>
+        <p data-i18n="prod_text"></p>
+      </header>
+      <div class="toolbar">
+        <div class="chips" id="chips" role="tablist"></div>
+        <label class="search">
+          <svg class="ico"><use href="#i-search"/></svg>
+          <input type="search" id="search" data-i18n-ph="search_ph" placeholder="جستجوی نام محصول یا کد رنگ…" autocomplete="off">
+        </label>
+      </div>
+      <p class="results" id="results" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden data-i18n="empty">محصولی پیدا نشد.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container about__inner">
+      <div class="about__media reveal">
+        <div class="about__collage">
+          <img src="assets/img/categories/trolley.webp" alt="" loading="lazy" class="c1">
+          <img src="assets/img/categories/beds.webp" alt="" loading="lazy" class="c2">
+          <img src="assets/img/categories/scratchers.webp" alt="" loading="lazy" class="c3">
+          <img src="assets/img/categories/bag.webp" alt="" loading="lazy" class="c4">
         </div>
+      </div>
+      <div class="about__content reveal">
+        <span class="eyebrow" data-i18n="about_eyebrow">درباره ما</span>
+        <h2 data-i18n="about_title">گروه تولیدی و پخش لیلیت پت</h2>
+        <p data-i18n="about_p1"></p>
+        <p data-i18n="about_p2"></p>
+        <ul class="checks">
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="about_li1"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="about_li2"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="about_li3"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="about_li4"></span></li>
+        </ul>
+        <blockquote class="quote"><svg class="ico"><use href="#i-heart"/></svg><span data-i18n="about_quote">با عشق تولید می‌کنیم، با اطمینان عرضه می‌کنیم.</span></blockquote>
+      </div>
     </div>
-</section>
+  </section>
+
+  <!-- CATALOG CTA -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="catalog__box reveal">
+        <svg class="catalog__paw" aria-hidden="true"><use href="#i-paw"/></svg>
+        <div>
+          <h2 data-i18n="catalog_title">کاتالوگ کامل محصولات</h2>
+          <p data-i18n="catalog_text"></p>
+        </div>
+        <div class="catalog__btns">
+          <a href="Liliet05.pdf" download class="btn btn--light"><svg class="ico"><use href="#i-down"/></svg> <span data-i18n="catalog_btn">دانلود کاتالوگ (PDF)</span></a>
+          <a href="CA.pdf" download class="btn btn--outline-light"><svg class="ico"><use href="#i-globe"/></svg> <span data-i18n="catalog_btn2">کاتالوگ انگلیسی / ترکی</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow" data-i18n="contact_eyebrow">تماس با ما</span>
+        <h2 data-i18n="contact_title">در ارتباط باشیم</h2>
+        <p data-i18n="contact_text"></p>
+      </header>
+      <div class="contact">
+        <div class="contact__cards">
+          <a class="ccard reveal" href="tel:+989364559096"><span class="ccard__icon"><svg><use href="#i-phone"/></svg></span><span><strong data-i18n="c_phone">تلفن</strong><span dir="ltr">+98 936 455 9096</span></span></a>
+          <a class="ccard reveal" href="https://wa.me/989364559096" target="_blank" rel="noopener"><span class="ccard__icon ccard__icon--wa"><svg><use href="#i-wa"/></svg></span><span><strong data-i18n="c_whatsapp">واتساپ</strong><span dir="ltr">+98 936 455 9096</span></span></a>
+          <a class="ccard reveal" href="mailto:sales@lilietpet.com"><span class="ccard__icon"><svg><use href="#i-mail"/></svg></span><span><strong data-i18n="c_email">ایمیل</strong><span dir="ltr">sales@lilietpet.com</span></span></a>
+          <a class="ccard reveal" href="https://www.instagram.com/lilietpet/" target="_blank" rel="noopener"><span class="ccard__icon ccard__icon--ig"><svg><use href="#i-ig"/></svg></span><span><strong data-i18n="c_instagram">اینستاگرام</strong><span dir="ltr">@lilietpet</span></span></a>
+          <a class="ccard reveal" href="https://lilietpet.com"><span class="ccard__icon"><svg><use href="#i-globe"/></svg></span><span><strong data-i18n="c_website">وب‌سایت</strong><span dir="ltr">www.lilietpet.com</span></span></a>
+        </div>
+        <form class="form reveal" id="contactForm">
+          <h3 data-i18n="form_title">ارسال پیام</h3>
+          <label><span data-i18n="form_name">نام شما</span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="form_msg">پیام شما</span><textarea name="message" rows="5" required></textarea></label>
+          <div class="form__btns">
+            <button type="submit" class="btn btn--wa" value="wa"><svg class="ico"><use href="#i-wa"/></svg> <span data-i18n="form_wa">ارسال در واتساپ</span></button>
+            <button type="submit" class="btn btn--ghost" value="mail"><svg class="ico"><use href="#i-mail"/></svg> <span data-i18n="form_mail">ارسال با ایمیل</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer id="main-footer">
-    <p>&copy; 2025 lilietpet.com. All Rights Reserved.</p>
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/img/brand/logo-white.png" alt="Liliet Pet" width="560" height="348" loading="lazy">
+      <p data-i18n="footer_text">تولیدکننده انواع ملزومات حیوانات خانگی با کیفیت بسیار بالا.</p>
+      <p class="footer__quote" data-i18n="about_quote"></p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_links">دسترسی سریع</h4>
+      <ul>
+        <li><a href="#home" data-i18n="nav_home">خانه</a></li>
+        <li><a href="#products" data-i18n="nav_products">محصولات</a></li>
+        <li><a href="#about" data-i18n="nav_about">درباره ما</a></li>
+        <li><a href="#catalog" data-i18n="nav_catalog">کاتالوگ</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">تماس با ما</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer_cats">دسته‌بندی‌ها</h4>
+      <ul id="footerCats"></ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer_contact">اطلاعات تماس</h4>
+      <ul class="footer__contact">
+        <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+989364559096" dir="ltr">+98 936 455 9096</a></li>
+        <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:sales@lilietpet.com">sales@lilietpet.com</a></li>
+        <li><svg class="ico"><use href="#i-ig"/></svg><a href="https://www.instagram.com/lilietpet/" target="_blank" rel="noopener">@lilietpet</a></li>
+        <li><svg class="ico"><use href="#i-globe"/></svg><a href="https://lilietpet.com">www.lilietpet.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container"><p>© <span id="year">2026</span> Liliet Pet — <span data-i18n="rights">تمامی حقوق برای لیلیت پت محفوظ است.</span></p></div>
+  </div>
 </footer>
 
-<script>
-// ===== جاوااسکریپت تغییر زبان و تب‌ها =====
-const translations = {
-    en: {nav_products:"Products",nav_about:"About Us",nav_contact:"Contact Us",hero_title:"Welcome to Liliet Pet Shop",hero_subtitle:"Everything your beloved pet needs for a happy and healthy life.",hero_button:"View Products",products_title:"Our Featured Products",catalog_title:"Check Out Our Full Catalog!",catalog_button:"Download PDF Catalog",about_title:"About Liliet Pet",about_text:"Liliet Pet was founded with a simple mission: to provide the best products for pets and their owners. We believe that pets are family, and they deserve the highest quality food, toys, and care. Our team is passionate about animals, and we carefully select every product to ensure it meets our high standards of quality and safety.",contact_title:"Get In Touch",contact_email:"Email:",contact_phone:"Phone (Iran):",tab_kole:"Backpacks",tab_scratcher:"Scratchers",tab_hug:"Harnesses",tab_bed:"Pet Beds",tab_bag:"Shoulder Bags",tab_elizabeth:"Elizabeth"},
-    tr: {nav_products:"Ürünler",nav_about:"Hakkımızda",nav_contact:"İletişim",hero_title:"Liliet Pet Shop'a Hoş Geldiniz",hero_subtitle:"Sevgili evcil hayvanınızın mutlu ve sağlıklı bir yaşam için ihtiyaç duyduğu her şey.",hero_button:"Ürünleri Görüntüle",products_title:"Öne Çıkan Ürünlerimiz",catalog_title:"Tüm Kataloğumuza Göz Atın!",catalog_button:"PDF Kataloğu İndir",about_title:"Liliet Pet Hakkında",about_text:"Liliet Pet, basit bir misyonla kuruldu...",contact_title:"Bize Ulaşın",contact_email:"E-posta:",contact_phone:"Telefon (İran):",tab_kole:"Kole",tab_scratcher:"Tırmalama Tahtaları",tab_hug:"Köpek Koşumları",tab_bed:"Yataklar",tab_bag:"Omuz Çantaları",tab_elizabeth:"Elizabeth"},
-    fa: {nav_products:"محصولات",nav_about:"درباره ما",nav_contact:"تماس با ما",hero_title:"به پت شاپ لیلیت پت خوش آمدید",hero_subtitle:"هر آنچه حیوان خانگی دلبند شما برای یک زندگی شاد و سالم نیاز دارد.",hero_button:"مشاهده محصولات",products_title:"محصولات ویژه ما",catalog_title:"کاتالوگ کامل ما را بررسی کنید!",catalog_button:"دانلود کاتالوگ PDF",about_title:"درباره لیلیت پت",about_text:"لیلیت پت با یک مأموریت ساده تأسیس شد: ارائه بهترین محصولات برای حیوانات خانگی و صاحبان آنها. ما معتقدیم که حیوانات خانگی عضوی از خانواده هستند و لایق باکیفیت‌ترین غذا، اسباب‌بازی و مراقبت می‌باشند. تیم ما علاقه‌مند به حیوانات است و ما هر محصول را با دقت انتخاب می‌کنیم تا از مطابقت آن با استانداردهای بالای کیفیت و ایمنی خود اطمینان حاصل کنیم.",contact_title:"با ما در تماس باشید",contact_email:"ایمیل:",contact_phone:"شماره تماس (ایران):",tab_kole:"کوله",tab_scratcher:"اسکرچر",tab_hug:"آغوشی",tab_bed:"جای خواب",tab_bag:"کیف دوشی",tab_elizabeth:"الیزابت"}
-};
+<a class="wa-float" href="https://wa.me/989364559096" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<button class="to-top" id="toTop" data-i18n-aria="to_top" aria-label="بازگشت به بالا"><svg><use href="#i-up"/></svg></button>
 
-const languageButtons = {en:document.getElementById('lang-en'),tr:document.getElementById('lang-tr'),fa:document.getElementById('lang-fa')};
+<!-- PRODUCT MODAL -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="icon-btn modal__close" data-close data-i18n-aria="close" aria-label="بستن"><svg><use href="#i-close"/></svg></button>
+    <div class="modal__body">
+      <div class="modal__gallery">
+        <div class="modal__main"><img id="mImg" alt=""></div>
+        <p class="modal__variant" id="mVariant"></p>
+        <div class="thumbs" id="mThumbs"></div>
+      </div>
+      <div class="modal__info">
+        <span class="eyebrow" id="mCat"></span>
+        <h2 id="mTitle"></h2>
+        <h3 class="modal__sub" data-i18n="m_models">مدل‌ها و قیمت</h3>
+        <div class="table-wrap"><table class="models" id="mModels"></table></div>
+        <h3 class="modal__sub" data-i18n="m_features">ویژگی‌ها</h3>
+        <ul class="checks checks--sm" id="mFeatures"></ul>
+        <div class="modal__actions">
+          <a class="btn btn--wa" id="mWa" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg> <span data-i18n="m_order_wa">سفارش در واتساپ</span></a>
+          <a class="btn btn--ghost" href="tel:+989364559096"><svg class="ico"><use href="#i-phone"/></svg> <span data-i18n="m_call">تماس تلفنی</span></a>
+          <button class="btn btn--icon" id="mShare" type="button" data-i18n-aria="m_share" aria-label="کپی لینک محصول"><svg class="ico"><use href="#i-link"/></svg></button>
+        </div>
+        <p class="modal__note" data-i18n="m_note"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-const changeLanguage = (lang)=>{
-    document.documentElement.setAttribute('dir',lang==='fa'?'rtl':'ltr');
-    document.documentElement.setAttribute('lang',lang);
-    document.querySelectorAll('[data-translate]').forEach(el=>{
-        const key=el.getAttribute('data-translate');
-        if(translations[lang][key]){el.textContent=translations[lang][key];}
-    });
-    document.querySelectorAll('.tab-button').forEach(btn=>{
-        const tabKey=btn.getAttribute('data-tab');
-        if(translations[lang][tabKey]){btn.textContent=translations[lang][tabKey];}
-    });
-    Object.values(languageButtons).forEach(button=>button.classList.remove('active'));
-    languageButtons[lang].classList.add('active');
-};
-Object.keys(languageButtons).forEach(lang=>{languageButtons[lang].addEventListener('click',()=>changeLanguage(lang));});
-document.addEventListener('DOMContentLoaded',()=>{changeLanguage('en');});
-
-// مدیریت تب‌ها
-const tabButtons=document.querySelectorAll('.tab-button');
-const tabContents=document.querySelectorAll('.tab-content');
-tabButtons.forEach(button=>{
-    button.addEventListener('click',()=>{
-        tabButtons.forEach(btn=>btn.classList.remove('active'));
-        tabContents.forEach(content=>content.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.getAttribute('data-tab')).classList.add('active');
-    });
-});
-</script>
-
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
