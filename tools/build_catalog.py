@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build the website product data and images from the Liliet catalog PDF.
+"""Build the website product data and images from the Liliet catalog PDF (Liliet07.10.pdf).
 
 Usage (from the repository root):
     python3 tools/build_catalog.py
 
 Requirements: poppler-utils (pdfimages), Python 3 with Pillow and numpy.
 
-The catalog (Liliet05.pdf) is an image-only PDF: one JPEG per page. Every
+The catalog is an image-only PDF: one JPEG per page. Every
 product colour/design sits inside a dashed frame with a grey code label on its
 bottom edge. This script finds those frames, crops the photo inside each one
 (without the label), and writes:
@@ -25,8 +25,8 @@ import numpy as np
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CATALOG = os.path.join(ROOT, "Liliet05.pdf")
-OLD_CATALOG = os.path.join(ROOT, "CA.pdf")  # same artwork, 600 dpi (logo/cover)
+CATALOG = os.path.join(ROOT, "Liliet07.10.pdf")
+OLD_CATALOG = os.path.join(ROOT, "CA.pdf")  # optional: same artwork at 600 dpi (logo/cover)
 OUT_IMG = os.path.join(ROOT, "assets", "img")
 OUT_JS = os.path.join(ROOT, "assets", "js", "products.js")
 
@@ -93,7 +93,7 @@ PRODUCTS = [
     dict(
         id="trolley", cat="carriers",
         name=T("ترولی حمل حیوانات", "Pet Trolley Carrier", "Tekerlekli Evcil Hayvan Taşıma Çantası"),
-        models=[("large", "1069", "52×37×56 cm", 8500000), ("small", "1068", "42×37×56 cm", 7500000)],
+        models=[("large", "1069", "52×37×56 cm", 9500000), ("small", "1068", "42×37×56 cm", 8500000)],
         features=["leather", "solidBase", "wheels", "pocket"],
         variants=[
             (3, 0, {"large": "6901", "small": "6801"}, "lightbluegray"),
@@ -109,7 +109,7 @@ PRODUCTS = [
     dict(
         id="lion-bag", cat="carriers",
         name=T("کیف حمل مدل سر شیر", "Lion Head Carrier Bag", "Aslan Başlı Taşıma Çantası"),
-        models=[("code", "1008", "13×40×41 cm", 1150000)],
+        models=[("code", "1008", "13×40×41 cm", 1500000)],
         features=["leather", "fixedBase", "leashNeck"],
         variants=[
             (5, 3, {"code": "0081"}, "lightblue"), (5, 2, {"code": "0082"}, "pink"),
@@ -126,8 +126,8 @@ PRODUCTS = [
         id="leather-space-backpack", cat="carriers",
         name=T("کوله حمل فضایی چرمی پارک‌دار و ساده", "Leather Space Capsule Backpack",
                "Deri Astronot Kapsül Sırt Çantası"),
-        models=[("standard", "1034", "40×35×33 cm", 2300000),
-                ("expandable", "1036", "40×35×33 – 78 cm", 2700000)],
+        models=[("standard", "1034", "40×35×33 cm", 2900000),
+                ("expandable", "1036", "40×35×33 – 78 cm", 3200000)],
         features=["leather", "solidBase", "leash", "window"],
         variants=[
             (7, 0, {"standard": "3401", "expandable": "3601"}, "blue"),
@@ -151,8 +151,8 @@ PRODUCTS = [
         id="patterned-space-backpack", cat="carriers",
         name=T("کوله حمل فضایی برزنتی طرح‌دار پارک‌دار و ساده", "Patterned Canvas Space Backpack",
                "Desenli Kanvas Astronot Sırt Çantası"),
-        models=[("standard", "1044", "40×35×33 cm", 2200000),
-                ("expandable", "1045", "40×35×33 – 78 cm", 2500000)],
+        models=[("standard", "1044", "40×35×33 cm", 2800000),
+                ("expandable", "1045", "40×35×33 – 78 cm", 3100000)],
         features=["canvas", "solidBase", "leash", "window"],
         variants=[
             (12, 0, {"standard": "4401", "expandable": "4501"}, None),
@@ -169,7 +169,7 @@ PRODUCTS = [
         id="luxury-ear-backpack", cat="carriers",
         name=T("کوله حمل فضایی چرمی لاکچری طرح گوش‌دار", "Luxury Leather Cat-Ear Backpack",
                "Lüks Deri Kulaklı Sırt Çantası"),
-        models=[("standard", "1007", "42×33×26 cm", 2300000)],
+        models=[("standard", "1007", "42×33×26 cm", 2900000)],
         features=["leather", "solidBase", "leash", "window"],
         variants=[
             (15, 1, {"standard": "0071"}, "blue"), (15, 0, {"standard": "0072"}, "pink"),
@@ -187,8 +187,8 @@ PRODUCTS = [
         id="canvas-space-backpack", cat="carriers",
         name=T("کوله حمل فضایی برزنتی نرمال پارک‌دار و ساده", "Classic Canvas Space Backpack",
                "Klasik Kanvas Astronot Sırt Çantası"),
-        models=[("standard", "1064", "40×35×33 cm", 1750000),
-                ("expandable", "1063", "40×35×33 – 78 cm", 1950000)],
+        models=[("standard", "1064", "40×35×33 cm", 1950000),
+                ("expandable", "1063", "40×35×33 – 78 cm", 2250000)],
         features=["canvas", "solidBase", "leash", "window"],
         variants=[
             (18, 0, {"standard": "6401", "expandable": "6301"}, "lightblue"),
@@ -215,7 +215,7 @@ PRODUCTS = [
         id="bird-backpack", cat="carriers",
         name=T("کوله حمل فضایی برزنتی نرمال پرنده", "Canvas Pet & Bird Backpack",
                "Kanvas Evcil Hayvan & Kuş Sırt Çantası"),
-        models=[("standard", "1065", "42×35×33 cm", 1750000)],
+        models=[("standard", "1065", "42×35×33 cm", 1950000)],
         features=["canvas", "solidBase", "leash", "window", "perch"],
         variants=[
             (24, 1, {"standard": "6501"}, "lightblue"), (24, 0, {"standard": "6502"}, "navy"),
@@ -234,7 +234,7 @@ PRODUCTS = [
         id="ear-window-backpack", cat="carriers",
         name=T("کوله حمل فضایی برزنتی نرمال با طلق گوش‌دار", "Canvas Backpack with Cat-Ear Window",
                "Kulaklı Şeffaf Pencereli Kanvas Sırt Çantası"),
-        models=[("standard", "1066", "42×35×33 cm", 1700000)],
+        models=[("standard", "1066", "42×35×33 cm", 1990000)],
         features=["canvas", "solidBase", "leash", "window"],
         variants=[
             (27, 1, {"standard": "6601"}, "lightblue"), (27, 0, {"standard": "6602"}, "navy"),
@@ -252,7 +252,7 @@ PRODUCTS = [
         id="front-carrier", cat="carriers",
         name=T("آغوشی سگ و گربه طرح‌دار", "Patterned Dog & Cat Front Carrier",
                "Desenli Kedi & Köpek Kanguru Çantası"),
-        models=[("large", "1014", "43×25 cm", 1000000), ("small", "1013", "36×22 cm", 900000)],
+        models=[("large", "1014", "43×25 cm", 1300000), ("small", "1013", "36×22 cm", 1100000)],
         features=["ultraSoft", "velcroLock", "strongStraps", "leash"],
         variants=[
             (30, 2, {"large": "1401", "small": "1301"}, None),
@@ -270,25 +270,26 @@ PRODUCTS = [
     dict(
         id="u-bed", cat="beds",
         name=T("جای خواب تشکی مدل U", "U-Shaped Cushion Bed", "U Model Minderli Yatak"),
-        models=[("large", "1048", "16×81×65 cm", 2250000), ("medium", "1047", "16×75×55 cm", 1900000),
-                ("small", "1046", "14×60×45 cm", 1450000)],
+        models=[("large", "1048", "16×81×65 cm", 2850000), ("medium", "1047", "16×75×55 cm", 2400000),
+                # The catalog prints 1.750.000 (page 31) and 1.700.000 (page 32) for size S.
+                ("small", "1046", "14×60×45 cm", 1750000)],
         features=["reversible", "washable", "nonSlip", "dogCat"],
         variants=[
-            (32, 1, {"large": "4801", "medium": None, "small": "4601"}, None),
-            (32, 0, {"large": "4802", "medium": "4702", "small": "4602"}, None),
-            (32, 2, {"large": "4804", "medium": "4704", "small": "4604"}, None),
-            (32, 4, {"large": "4805", "medium": "4705", "small": "4605"}, None),
-            (32, 3, {"large": "4806", "medium": "4706", "small": "4606"}, None),
-            (31, 0, {"large": "4807", "medium": "4707", "small": "4607"}, None),
-            (31, 1, {"large": "4808", "medium": "4708", "small": "4608"}, None),
-            (31, 2, {"large": "4809", "medium": "4709", "small": "4609"}, None),
-            (31, 3, {"large": "4810", "medium": "4710", "small": "4610"}, None),
+            (31, 1, {"large": "4801", "medium": None, "small": "4601"}, None),
+            (31, 0, {"large": "4802", "medium": "4702", "small": "4602"}, None),
+            (31, 2, {"large": "4804", "medium": "4704", "small": "4604"}, None),
+            (31, 4, {"large": "4805", "medium": "4705", "small": "4605"}, None),
+            (31, 3, {"large": "4806", "medium": "4706", "small": "4606"}, None),
+            (32, 0, {"large": "4807", "medium": "4707", "small": "4607"}, None),
+            (32, 1, {"large": "4808", "medium": "4708", "small": "4608"}, None),
+            (32, 2, {"large": "4809", "medium": "4709", "small": "4609"}, None),
+            (32, 3, {"large": "4810", "medium": "4710", "small": "4610"}, None),
         ],
     ),
     dict(
         id="teepee-bed", cat="beds",
         name=T("جای خواب مدل سرخ‌پوستی طرح‌دار", "Patterned Teepee Bed", "Desenli Çadır (Tipi) Yatak"),
-        models=[("standard", "1067", "45×48×48 cm", 1700000)],
+        models=[("standard", "1067", "45×48×48 cm", 2350000)],
         features=["nonSlipWaterproof", "smallBreeds"],
         variants=[
             (33, 0, {"standard": "6701"}, None), (33, 1, {"standard": "6703"}, None),
@@ -299,7 +300,7 @@ PRODUCTS = [
     dict(
         id="three-way-bed", cat="beds",
         name=T("جای خواب سه‌حالته طرح‌دار", "Patterned 3-in-1 Cave Bed", "Desenli 3 Fonksiyonlu Yatak"),
-        models=[("medium", "1017", "45×48×48 cm", 1980000), ("small", "1071", "38×38×38 cm", 1400000)],
+        models=[("medium", "1017", "45×48×48 cm", 3100000), ("small", "1071", "38×38×38 cm", 1600000)],
         features=["nonSlipWaterproof", "smallBreeds"],
         variants=[
             (35, 0, {"medium": "1701", "small": "7101"}, None),
@@ -316,7 +317,7 @@ PRODUCTS = [
     dict(
         id="cabin-bed", cat="beds",
         name=T("جای خواب مدل کلبه", "Cabin House Bed", "Kulübe Model Yatak"),
-        models=[("large", "1038", "55×63×63 cm", 2950000), ("small", "1037", "45×55×55 cm", 1950000)],
+        models=[("large", "1038", "55×63×63 cm", 4500000), ("small", "1037", "45×55×55 cm", 2950000)],
         features=["washable", "nonSlip", "dogCat"],
         variants=[
             (37, 0, {"large": "801", "small": "701"}, None),
@@ -333,27 +334,27 @@ PRODUCTS = [
     dict(
         id="angel-bed", cat="beds",
         name=T("جای خواب سه‌حالته آنجل", "Angel Plush 3-in-1 Bed", "Angel Peluş 3 Fonksiyonlu Yatak"),
-        models=[("standard", "1000", "48×48×48 cm", 2565000)],
+        models=[("standard", "1000", "48×48×48 cm", 3700000)],
         features=["nonSlipWaterproof", "smallBreeds"],
         variants=[
             (39, 0, {"standard": "1001"}, "yellow"),
             (39, [33, 577, 540, 824], {"standard": "1002"}, "pink"),
             (39, [458, 899, 967, 1150], {"standard": "1003"}, "lightblue"),
-            (41, 0, {"standard": "1004"}, "plum"),
-            (41, [61, 462, 566, 712], {"standard": "1005"}, "lightgray"),
-            (41, [487, 682, 992, 932], {"standard": "1006"}, "gray"),
-            (41, 1, {"standard": "1007"}, "mint"),
-            (40, 0, {"standard": "1008"}, "purple"),
-            (40, 1, {"standard": "1009"}, "red"),
-            (40, 2, {"standard": "1010"}, "charcoal"),
-            (40, 3, {"standard": "1011"}, "navy"),
+            (40, 0, {"standard": "1004"}, "plum"),
+            (40, [61, 462, 566, 712], {"standard": "1005"}, "lightgray"),
+            (40, [487, 682, 992, 932], {"standard": "1006"}, "gray"),
+            (40, 1, {"standard": "1007"}, "mint"),
+            (41, 0, {"standard": "1008"}, "purple"),
+            (41, 1, {"standard": "1009"}, "red"),
+            (41, 2, {"standard": "1010"}, "charcoal"),
+            (41, 3, {"standard": "1011"}, "navy"),
         ],
     ),
     dict(
         id="small-three-way-bed", cat="beds",
         name=T("جای خواب سه‌حالته کوچک", "Small Velvet 3-in-1 Bed", "Küçük Kadife 3 Fonksiyonlu Yatak"),
-        models=[("standard", "1070", "38×38×38 cm", 1300000)],
-        features=["velvet"],
+        models=[("standard", "1070", "38×38×38 cm", 1400000)],
+        features=["velvet", "multiColor"],
         variants=[(42, 0, {"standard": "1070"}, "cream")],
     ),
     # ------------------------------------------------------------------ litter
@@ -361,15 +362,15 @@ PRODUCTS = [
         id="travel-litter", cat="litter",
         name=T("ظرف خاک مسافرتی و کیف حمل خاک", "Travel Litter Box & Litter Bag",
                "Seyahat Kum Kabı & Kum Taşıma Çantası"),
-        models=[("litterBox", "1052", "40×40×13 cm", 500000), ("litterBag", "1053", "28×40 cm", 200000)],
-        features=["waterproofCanvas", "scoopBag"],
+        models=[("litterBox", "1052", "40×40×13 cm", 625000), ("litterBag", "1053", "28×40 cm", 325000)],
+        features=["waterproofCanvas", "scoopBag", "multiColor"],
         variants=[(42, 1, {"litterBox": "1052", "litterBag": "1053"}, "black")],
     ),
     # ----------------------------------------------------------------- collars
     dict(
         id="elizabeth-collar", cat="collars",
         name=T("قلاده الیزابت بالشتی", "Soft Pillow Elizabethan Collar", "Yastıklı Elizabeth Yakalığı"),
-        models=[("large", "1062", "R 37 cm", 410000), ("small", "1061", "R 25 cm", 350000)],
+        models=[("large", "1062", "R 37 cm", 550000), ("small", "1061", "R 25 cm", 450000)],
         features=["softFabric", "elastic", "lightweight"],
         variants=[
             (43, 1, {"large": "6201", "small": "6101"}, None),
@@ -384,7 +385,7 @@ PRODUCTS = [
     dict(
         id="cat-tree", cat="scratchers",
         name=T("درخت گربه", "Cat Tree", "Kedi Ağacı"),
-        models=[("tower", "1021", "120×45×45 cm", 6200000), ("tiered", "1035", "120×40×40 cm", 3200000)],
+        models=[("tower", "1021", "120×45×45 cm", 8500000), ("tiered", "1035", "120×40×40 cm", 4400000)],
         features=["multiColor"],
         variants=[
             (46, 4, {"tower": "2101"}, "lilac"), (46, 3, {"tower": "2102"}, "turquoise"),
@@ -397,21 +398,21 @@ PRODUCTS = [
     dict(
         id="scratcher-post", cat="scratchers",
         name=T("اسکرچر گربه رنگ‌بندی متنوع", "Cat Scratching Post", "Kedi Tırmalama Direği"),
-        models=[("triple", "1042", "", 1050000), ("single", "1031", "", 1050000)],
+        models=[("triple", "1042", "", 1450000), ("single", "1031", "", 1450000)],
         features=["multiColor"],
         variants=[(45, 0, {"triple": "1042"}, None), (45, 1, {"single": "1031"}, None)],
     ),
     dict(
         id="arch-scratcher", cat="scratchers",
         name=T("اسکرچر قوسی برس‌دار گربه", "Arch Self-Groomer Cat Scratcher", "Kemerli Tımar Fırçalı Tırmalama"),
-        models=[("standard", "1018", "", 1160000)],
+        models=[("standard", "1018", "", 1550000)],
         features=["multiColor"],
         variants=[(44, 2, {"standard": "1018"}, None)],
     ),
     dict(
         id="cat-toys", cat="scratchers",
         name=T("اسباب‌بازی گربه", "Cat Toys", "Kedi Oyuncakları"),
-        models=[("toyA", "1019", "", 145000), ("toyB", "1020", "", 105000)],
+        models=[("toyA", "1019", "", 155000), ("toyB", "1020", "", 115000)],
         features=["perPiece"],
         variants=[(44, 1, {"toyA": "1019"}, None), (44, 0, {"toyB": "1020"}, None)],
     ),
@@ -419,7 +420,7 @@ PRODUCTS = [
     dict(
         id="car-seat-cover", cat="covers",
         name=T("کاور صندلی ماشین", "Pet Car Seat Cover", "Evcil Hayvan Araç Koltuk Örtüsü"),
-        models=[("classic", "1023", "135×50×60 cm", 2300000), ("quilted", "1012", "135×50×60 cm", None)],
+        models=[("classic", "1023", "135×50×60 cm", 3300000), ("quilted", "1012", "135×50×60 cm", None)],
         features=["carWaterproof", "doorCover", "mesh", "carBag"],
         variants=[
             (47, 7, {"classic": "1023"}, "gray"),
@@ -632,7 +633,10 @@ def main():
         old_pages = {}
         if os.path.exists(OLD_CATALOG):
             old_pages.update(extract_pages(OLD_CATALOG, tmp, "c", 1, 2))
-        build_brand(old_pages, pages)
+        # The high-resolution logo/hero came from the old 600 dpi catalog (CA.pdf).
+        # Keep the committed images unless that source is available again.
+        if old_pages or not os.path.exists(os.path.join(OUT_IMG, "brand", "logo.png")):
+            build_brand(old_pages, pages)
 
         cache = {}
         out_products = []
@@ -670,7 +674,7 @@ def main():
                 "features": p["features"], "variants": variants,
             })
         with open(OUT_JS, "w", encoding="utf-8") as f:
-            f.write("/* Generated by tools/build_catalog.py from Liliet05.pdf - do not edit by hand. */\n")
+            f.write("/* Generated by tools/build_catalog.py from Liliet07.10.pdf - do not edit by hand. */\n")
             f.write("window.LILIET_PRODUCTS = ")
             json.dump(out_products, f, ensure_ascii=False, indent=1)
             f.write(";\n")

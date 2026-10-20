@@ -97,7 +97,6 @@ window.LILIET_I18N = {
     catalog_title: "کاتالوگ کامل محصولات",
     catalog_text: "کاتالوگ دیجیتال لیلیت پت را با همه کدها، رنگ‌ها و قیمت‌ها دانلود کنید.",
     catalog_btn: "دانلود کاتالوگ (PDF)",
-    catalog_btn2: "کاتالوگ انگلیسی / ترکی",
 
     contact_eyebrow: "تماس با ما",
     contact_title: "در ارتباط باشیم",
@@ -272,7 +271,6 @@ window.LILIET_I18N = {
     catalog_title: "Full product catalog",
     catalog_text: "Download the Liliet Pet digital catalog with every code, color and price.",
     catalog_btn: "Download catalog (PDF)",
-    catalog_btn2: "English / Turkish catalog",
 
     contact_eyebrow: "Contact",
     contact_title: "Get in touch",
@@ -443,7 +441,6 @@ window.LILIET_I18N = {
     catalog_title: "Tam ürün kataloğu",
     catalog_text: "Tüm kodlar, renkler ve fiyatlarla Liliet Pet dijital kataloğunu indirin.",
     catalog_btn: "Kataloğu indir (PDF)",
-    catalog_btn2: "İngilizce / Türkçe katalog",
 
     contact_eyebrow: "İletişim",
     contact_title: "Bize ulaşın",

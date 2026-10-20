@@ -14,14 +14,14 @@ assets/js/app.js           language switch, filters, search, product window, Wha
 assets/img/products/       product photos cropped from the catalog
 assets/img/brand/          logo, hero and social-share image
 assets/img/categories/     category images (from pic/)
-tools/build_catalog.py     rebuilds products.js and the images from Liliet05.pdf
-Liliet05.pdf               current catalog (download button)
-CA.pdf                     English / Turkish catalog
+tools/build_catalog.py     rebuilds products.js and the images from the catalog PDF
+Liliet07.10.pdf            current catalog (download buttons)
 ```
 
 ## Updating products
 
-Products, prices, sizes and colour codes come from `Liliet05.pdf`.
+Products, prices, sizes and colour codes come from `Liliet07.10.pdf`.
+When a new catalog arrives, point `CATALOG` in the script to the new file and update the download links in `index.html`.
 Edit the `PRODUCTS` list in `tools/build_catalog.py`, then run:
 
 ```bash
