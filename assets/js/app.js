@@ -42,9 +42,6 @@
       .replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/[‌‏]/g, " ")
       .toLocaleLowerCase().replace(/\s+/g, " ").trim();
   }
-  function prices(p) {
-    return p.models.map(function (m) { return m.price; }).filter(function (x) { return x != null; });
-  }
   function variantCodes(v) {
     return Object.keys(v.codes || {}).map(function (k) { return v.codes[k]; }).filter(Boolean);
   }
@@ -148,13 +145,9 @@
     return { ok: false };
   }
 
-  function priceHtml(p) {
-    var list = prices(p);
-    if (!list.length) return '<span class="price"><strong>' + esc(t("call_price")) + "</strong></span>";
-    var min = Math.min.apply(null, list);
-    var multi = list.some(function (x) { return x !== min; });
-    return '<span class="price">' + (multi ? "<small>" + esc(t("from")) + "</small>" : "<small>&nbsp;</small>") +
-      "<strong>" + num(min) + "<em>" + esc(t("currency")) + "</em></strong></span>";
+  // Prices are not published on the site; customers are asked to get in touch.
+  function priceHtml() {
+    return '<a class="price" href="#contact"><small>' + esc(t("price_label")) + "</small><strong>" + esc(t("price_contact")) + "</strong></a>";
   }
 
   function renderGrid() {
@@ -180,7 +173,7 @@
         '<span class="card__tag">' + esc(catName(p.cat)) + "</span></div>" +
         '<div class="card__body"><h3>' + esc(p.name[state.lang]) + "</h3>" +
         (shown.length > 1 ? '<div class="swatches">' + sw + more + "</div>" : "") +
-        '<div class="card__foot">' + priceHtml(p) +
+        '<div class="card__foot">' + priceHtml() +
         '<span class="card__go" aria-hidden="true"><svg class="flip"><use href="#i-arrow"/></svg></span></div></div></article>'
       );
     });
@@ -239,9 +232,9 @@
     var head = "<tr>" + (multi ? "<th>" + esc(t("m_model")) + "</th>" : "") + "<th>" + esc(t("m_code")) + "</th><th>" + esc(t("m_size")) + "</th><th>" + esc(t("m_price")) + "</th></tr>";
     $("#mModels").innerHTML = head + p.models.map(function (m) {
       var sel = multi && Object.prototype.hasOwnProperty.call(codes, m.key);
-      var price = m.price != null ? num(m.price) + "<em>" + esc(t("currency")) + "</em>" : esc(t("out_of_stock"));
+      var price = m.soldOut ? esc(t("out_of_stock")) : '<a href="tel:+989364559096">' + esc(t("price_contact")) + "</a>";
       return '<tr class="' + (sel ? "sel" : "") + '">' + (multi ? "<td>" + esc(t("mdl_" + m.key)) + "</td>" : "") + '<td class="code">' + esc(m.code) +
-        '</td><td dir="ltr">' + esc(m.size || "—") + '</td><td class="' + (m.price != null ? "p" : "na") + '">' + price + "</td></tr>";
+        '</td><td dir="ltr">' + esc(m.size || "—") + '</td><td class="' + (m.soldOut ? "na" : "p") + '">' + price + "</td></tr>";
     }).join("");
 
     $("#mFeatures").innerHTML = p.features.map(function (f) {
@@ -257,6 +250,107 @@
     var u = new URL(location.href);
     u.hash = "product/" + p.id + "/" + v;
     return u.toString();
+  }
+
+  // ------------------------------------------------------------------ catalog (code protected)
+  var CATALOG_META = "assets/catalog/catalog.json";
+  var CATALOG_DATA = "assets/catalog/catalog.bin";
+  var gateFocus = null, gateBusy = false, catalogUrl = null;
+
+  function gateMsg(key, kind) {
+    var el = $("#gateMsg");
+    el.textContent = key ? t(key) : "";
+    el.className = "gate__msg" + (kind ? " gate__msg--" + kind : "");
+  }
+  function openGate() {
+    gateFocus = document.activeElement;
+    closeNav();
+    $("#gate").hidden = false;
+    document.body.classList.add("lock");
+    $("#gateWa").href = "https://wa.me/" + PHONE_WA + "?text=" + encodeURIComponent(t("wa_code_msg"));
+    if (!catalogUrl) gateMsg("");
+    setTimeout(function () { $("#gateCode").focus(); }, 30);
+  }
+  function closeGate() {
+    if ($("#gate").hidden) return;
+    $("#gate").hidden = true;
+    if (!state.product) document.body.classList.remove("lock");
+    if (gateFocus && gateFocus.focus) gateFocus.focus();
+  }
+  function setProgress(ratio) {
+    var bar = $("#gateProgress");
+    bar.hidden = ratio == null;
+    $("span", bar).style.width = Math.round((ratio || 0) * 100) + "%";
+  }
+  function fetchWithProgress(url) {
+    return fetch(url, { cache: "no-cache" }).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      var total = +res.headers.get("Content-Length") || 0;
+      if (!res.body || !res.body.getReader || !total) return res.arrayBuffer();
+      var reader = res.body.getReader(), chunks = [], got = 0;
+      return (function pump() {
+        return reader.read().then(function (r) {
+          if (r.done) {
+            var out = new Uint8Array(got), off = 0;
+            chunks.forEach(function (c) { out.set(c, off); off += c.length; });
+            return out.buffer;
+          }
+          chunks.push(r.value);
+          got += r.value.length;
+          setProgress(Math.min(got / total, 1));
+          return pump();
+        });
+      })();
+    });
+  }
+  function saveFile(url, name) {
+    var a = $("#gateFile");
+    a.href = url;
+    a.download = name;
+    a.hidden = false;
+    a.click();
+  }
+  function submitGate(e) {
+    e.preventDefault();
+    if (gateBusy) return;
+    var C = window.LilietCatalogCrypto;
+    var input = $("#gateCode");
+    var code = C ? C.normalizeCode(input.value) : input.value;
+    if (!/^\d{4}$/.test(code)) { gateMsg("gate_short", "error"); input.focus(); return; }
+    if (!C || !window.crypto || !window.crypto.subtle || !window.TextEncoder) { gateMsg("gate_unsupported", "error"); return; }
+    gateBusy = true;
+    $("#gateSubmit").disabled = true;
+    $("#gateFile").hidden = true;
+    gateMsg("gate_checking");
+    var meta;
+    fetch(CATALOG_META, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (m) { meta = m; return C.verify(code, meta); })
+      .then(function (key) {
+        if (!key) {
+          gateMsg("gate_wrong", "error");
+          input.classList.remove("shake"); void input.offsetWidth; input.classList.add("shake");
+          input.select();
+          return null;
+        }
+        gateMsg("gate_downloading");
+        setProgress(0);
+        return fetchWithProgress(CATALOG_DATA).then(function (data) {
+          return C.unlock(key, meta, data);
+        }).then(function (pdf) {
+          if (catalogUrl) URL.revokeObjectURL(catalogUrl);
+          catalogUrl = URL.createObjectURL(new Blob([pdf], { type: "application/pdf" }));
+          saveFile(catalogUrl, meta.name || "Liliet-Pet-Catalog.pdf");
+          gateMsg("gate_ok", "ok");
+          toast(t("gate_ok"));
+        });
+      })
+      .catch(function () { gateMsg("gate_error", "error"); })
+      .then(function () {
+        gateBusy = false;
+        $("#gateSubmit").disabled = false;
+        setProgress(null);
+      });
   }
 
   function routeFromHash() {
@@ -301,6 +395,8 @@
         history.replaceState(null, "", "#product/" + state.product.id + "/" + state.variant);
         return;
       }
+      if (e.target.closest("[data-gate]")) { e.preventDefault(); openGate(); return; }
+      if (e.target.closest("[data-gate-close]")) { closeGate(); return; }
       if (e.target.closest("[data-close]")) { closeModal(); return; }
     });
 
@@ -318,7 +414,10 @@
 
     window.addEventListener("hashchange", routeFromHash);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") { closeModal(); closeNav(); }
+      if (e.key === "Escape") {
+        if (!$("#gate").hidden) closeGate(); else closeModal();
+        closeNav();
+      }
       if (state.product && (e.key === "ArrowLeft" || e.key === "ArrowRight") && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
         var dir = (e.key === "ArrowRight") === (document.documentElement.dir === "rtl") ? -1 : 1;
         var n = state.product.variants.length;
@@ -326,6 +425,14 @@
         renderModal();
       }
       if (e.key === "Tab" && state.product) trapFocus(e);
+    });
+
+    $("#gateForm").addEventListener("submit", submitGate);
+    $("#gateCode").addEventListener("input", function (e) {
+      var C = window.LilietCatalogCrypto;
+      var v = (C ? C.normalizeCode(e.target.value) : e.target.value).replace(/\D/g, "").slice(0, 4);
+      if (v !== e.target.value) e.target.value = v;
+      if ($("#gateMsg").classList.contains("gate__msg--error")) gateMsg("");
     });
 
     $("#mShare").addEventListener("click", function () {

@@ -1,0 +1,12 @@
+{
+ "v": 1,
+ "kdf": "PBKDF2-SHA256",
+ "iterations": 600000,
+ "salt": "phrkAf25UhvaF9R7zbe/3A==",
+ "checkIv": "K87HsgYm68mP+fSn",
+ "check": "eJLUCGvWVXed6lm/qM6366ZWn2x2X5/8/GDH6hgSzAqP",
+ "iv": "iJM2g42VtgzuonMO",
+ "name": "Liliet-Pet-Catalog-07.10.pdf",
+ "size": 10390637,
+ "updated": "2026-10-22"
+}

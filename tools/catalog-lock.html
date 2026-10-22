@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>تغییر کد کاتالوگ | لیلیت پت</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --mint: #a8d3bf; --mint-50: #f1f8f4; --teal: #2f6466; --orange: #f1763a; --ink: #233337; --muted: #6c7e83; --line: #e3ece8; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Vazirmatn", system-ui, sans-serif; color: var(--ink); background: linear-gradient(160deg, var(--mint), #e9f5ef 40%, #fff); min-height: 100vh; padding: 32px 16px; line-height: 1.8; }
+  main { max-width: 640px; margin: 0 auto; display: grid; gap: 18px; }
+  header { text-align: center; }
+  header img { height: 70px; margin: 0 auto 6px; display: block; }
+  h1 { font-size: 1.5rem; }
+  .card { background: #fff; border-radius: 20px; padding: 24px; box-shadow: 0 10px 30px rgba(35, 51, 55, .08); }
+  h2 { font-size: 1.1rem; color: var(--teal); margin-bottom: 10px; }
+  ol { padding-inline-start: 1.3em; display: grid; gap: 6px; }
+  label { display: grid; gap: 6px; font-weight: 600; margin-bottom: 14px; }
+  input[type=file], input[type=text] { width: 100%; padding: .7em .9em; border: 2px solid var(--line); border-radius: 12px; background: var(--mint-50); font: inherit; }
+  input.code { font: 800 1.6rem "Vazirmatn", sans-serif; letter-spacing: .4em; text-align: center; direction: ltr; max-width: 220px; }
+  button, .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4em; padding: .75em 1.4em; border: 0; border-radius: 999px; background: var(--orange); color: #fff; font: 700 1rem "Vazirmatn", sans-serif; cursor: pointer; text-decoration: none; }
+  button:disabled { opacity: .6; cursor: progress; }
+  .btn--teal { background: var(--teal); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .msg { margin-top: 12px; font-weight: 600; min-height: 1.6em; }
+  .err { color: #d33a2f; } .ok { color: #14834a; }
+  .note { font-size: .9rem; color: var(--muted); }
+  code { background: var(--mint-50); padding: 0 .35em; border-radius: 6px; direction: ltr; unicode-bidi: embed; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="../assets/img/brand/logo.png" alt="Liliet Pet">
+    <h1>تغییر کد دانلود کاتالوگ</h1>
+    <p class="note">این صفحه فقط برای مدیر سایت است. همه کارها داخل مرورگر خودتان انجام می‌شود و فایل یا کدی به جایی ارسال نمی‌شود.</p>
+  </header>
+
+  <section class="card">
+    <h2>۱. ساخت فایل‌های قفل‌شده</h2>
+    <form id="lockForm">
+      <label>فایل PDF کاتالوگ
+        <input type="file" id="pdf" accept="application/pdf,.pdf" required>
+      </label>
+      <label>کد جدید (۴ رقم)
+        <input type="text" class="code" id="code1" inputmode="numeric" maxlength="4" autocomplete="off" required>
+      </label>
+      <label>تکرار کد جدید
+        <input type="text" class="code" id="code2" inputmode="numeric" maxlength="4" autocomplete="off" required>
+      </label>
+      <button type="submit" id="lockBtn">ساخت فایل‌ها</button>
+    </form>
+    <p class="msg" id="lockMsg"></p>
+    <div class="row" id="downloads" hidden>
+      <a class="btn btn--teal" id="dlJson" download="catalog.json">دانلود catalog.json</a>
+      <a class="btn btn--teal" id="dlBin" download="catalog.bin">دانلود catalog.bin</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>۲. بارگذاری در GitHub</h2>
+    <ol>
+      <li>هر دو فایل <code>catalog.json</code> و <code>catalog.bin</code> را از مرحله ۱ دانلود کنید.</li>
+      <li>صفحه بارگذاری پوشه <code>assets/catalog</code> را در GitHub باز کنید:
+        <div class="row"><a class="btn" href="https://github.com/alirezasa/Liliet-Shop/upload/main/assets/catalog" target="_blank" rel="noopener">باز کردن صفحه بارگذاری</a></div>
+      </li>
+      <li>هر دو فایل را داخل صفحه بکشید (فایل‌های قبلی جایگزین می‌شوند) و دکمه سبز <b>Commit changes</b> را بزنید.</li>
+      <li>چند دقیقه صبر کنید تا سایت به‌روز شود؛ از آن به بعد فقط کد جدید کار می‌کند.</li>
+    </ol>
+    <p class="note" style="margin-top:10px">برای عوض کردن خود کاتالوگ هم همین مراحل را با فایل PDF جدید انجام دهید. فایل PDF اصلی را در GitHub بارگذاری نکنید، چون هر کسی می‌تواند آن را بدون کد دانلود کند.</p>
+  </section>
+
+  <section class="card">
+    <h2>۳. آزمایش کد روی سایت</h2>
+    <p class="note">بعد از به‌روز شدن سایت، کد را اینجا امتحان کنید تا مطمئن شوید درست کار می‌کند.</p>
+    <form id="testForm" class="row" style="align-items:center">
+      <input type="text" class="code" id="testCode" inputmode="numeric" maxlength="4" autocomplete="off" required>
+      <button type="submit" class="btn--teal" id="testBtn">بررسی کد</button>
+    </form>
+    <p class="msg" id="testMsg"></p>
+  </section>
+</main>
+
+<script src="../assets/js/catalog-crypto.js"></script>
+<script>
+(function () {
+  var C = window.LilietCatalogCrypto;
+  function $(id) { return document.getElementById(id); }
+  function say(el, text, cls) { el.textContent = text; el.className = "msg" + (cls ? " " + cls : ""); }
+  function clean(el) { el.value = C.normalizeCode(el.value).replace(/\D/g, "").slice(0, 4); }
+  ["code1", "code2", "testCode"].forEach(function (id) { $(id).addEventListener("input", function () { clean($(id)); }); });
+
+  if (!window.crypto || !window.crypto.subtle) {
+    say($("lockMsg"), "این مرورگر پشتیبانی نمی‌کند. لطفاً با Chrome یا Firefox به‌روز و از طریق آدرس https سایت باز کنید.", "err");
+    $("lockBtn").disabled = true; $("testBtn").disabled = true;
+  }
+
+  var urls = [];
+  $("lockForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = $("lockMsg"), file = $("pdf").files[0], c1 = $("code1").value, c2 = $("code2").value;
+    if (!file) return say(msg, "فایل PDF کاتالوگ را انتخاب کنید.", "err");
+    if (!/^\d{4}$/.test(c1)) return say(msg, "کد باید دقیقاً ۴ رقم باشد.", "err");
+    if (c1 !== c2) return say(msg, "دو کد وارد شده یکسان نیستند.", "err");
+    $("lockBtn").disabled = true;
+    $("downloads").hidden = true;
+    say(msg, "در حال ساخت فایل‌ها…");
+    file.arrayBuffer().then(function (buf) {
+      return C.lock(new Uint8Array(buf), c1, { name: "Liliet-Pet-Catalog.pdf" });
+    }).then(function (res) {
+      urls.forEach(URL.revokeObjectURL);
+      urls = [
+        URL.createObjectURL(new Blob([JSON.stringify(res.meta, null, 1) + "\n"], { type: "application/json" })),
+        URL.createObjectURL(new Blob([res.data], { type: "application/octet-stream" }))
+      ];
+      $("dlJson").href = urls[0];
+      $("dlBin").href = urls[1];
+      $("downloads").hidden = false;
+      say(msg, "فایل‌ها آماده شد. هر دو را دانلود کنید و طبق مرحله ۲ در GitHub بارگذاری کنید.", "ok");
+    }).catch(function (err) {
+      say(msg, "خطا در ساخت فایل‌ها: " + err.message, "err");
+    }).then(function () { $("lockBtn").disabled = false; });
+  });
+
+  $("testForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = $("testMsg"), code = $("testCode").value;
+    if (!/^\d{4}$/.test(code)) return say(msg, "کد باید ۴ رقم باشد.", "err");
+    $("testBtn").disabled = true;
+    say(msg, "در حال بررسی…");
+    fetch("../assets/catalog/catalog.json", { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (meta) {
+      return C.verify(code, meta).then(function (key) {
+        say(msg, key ? "این کد درست است ✓ (کاتالوگ به‌روز شده در " + meta.updated + ")" : "این کد با کاتالوگ فعلی سایت جور نیست.", key ? "ok" : "err");
+      });
+    }).catch(function (err) {
+      say(msg, "خطا در بررسی: " + err.message, "err");
+    }).then(function () { $("testBtn").disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
